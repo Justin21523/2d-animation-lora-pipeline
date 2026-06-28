@@ -1,0 +1,20 @@
+# Single Character with Weight Variations - SDXL
+# Use these prompts to test different LoRA weights on single characters
+
+# Miguel (Coco)
+miguel, a 3d animated character, pixar style, portrait, neutral expression, studio lighting, high quality
+miguel, a 3d animated character, pixar style, full body, standing confidently, natural lighting
+miguel, a 3d animated character, pixar style, playing guitar, passionate expression, warm lighting
+miguel, a 3d animated character, pixar style, three-quarter view, smiling, cinematic lighting
+
+# Alberto (Luca)
+alberto, a 3d animated character, pixar style, portrait, cheerful expression, studio lighting, high quality
+alberto, a 3d animated character, pixar style, full body, dynamic pose, natural lighting
+alberto, a 3d animated character, pixar style, looking at camera, friendly smile, soft lighting
+alberto, a 3d animated character, pixar style, side profile, contemplative, dramatic lighting
+
+# Elio (Elio)
+elio, a 3d animated character, pixar style, portrait, curious expression, studio lighting, high quality
+elio, a 3d animated character, pixar style, full body, adventurous pose, natural lighting
+elio, a 3d animated character, pixar style, close-up face, excited, bright lighting
+elio, a 3d animated character, pixar style, three-quarter view, determined expression, cinematic lighting

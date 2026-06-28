@@ -1,0 +1,20 @@
+{
+  "character": "Barley Lightfoot",
+  "film": "Onward",
+  "trigger_word": "barley_lightfoot",
+  "test_prompts": [
+    "barley_lightfoot, a 3d animated character, pixar style, smooth shading",
+    "barley_lightfoot smiling, a 3d animated character, pixar style",
+    "barley_lightfoot portrait, 3d render, pixar animation style",
+    "close-up of barley_lightfoot, detailed 3d character, pixar quality",
+    "barley_lightfoot standing, full body, 3d animated character",
+    "barley_lightfoot three-quarter view, pixar style, studio lighting"
+  ],
+  "negative_prompt": "2d, flat, sketch, low quality, blurry, deformed",
+  "parameters": {
+    "steps": 30,
+    "cfg_scale": 7.5,
+    "seed": 42,
+    "num_variations": 4
+  }
+}

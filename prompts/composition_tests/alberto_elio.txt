@@ -1,0 +1,19 @@
+# Alberto + Elio Composition Prompts - SDXL
+
+# Together scenes
+alberto and elio, two 3d animated characters, pixar style, side by side, casual pose, studio lighting
+alberto and elio, two 3d animated characters, pixar style, playing together, energetic pose, bright daylight
+alberto and elio, two 3d animated characters, pixar style, three-quarter view portraits, dramatic lighting
+alberto and elio, two 3d animated boys, pixar style, outdoor adventure, exploring together, natural lighting
+
+# Individual alberto prompts
+alberto, a 3d animated boy, pixar style, green scales, sea monster features, smiling, sunny day, full body
+alberto, a 3d animated character, pixar style, close-up portrait, friendly expression, soft lighting
+alberto, a 3d animated sea monster boy, pixar style, swimming pose, underwater scene, blue-green lighting
+alberto, a 3d animated character, pixar style, standing confidently, beach background, golden hour
+
+# Individual elio prompts
+elio, a 3d animated boy, pixar style, dark hair, curious expression, soft lighting, full body portrait
+elio, a 3d animated character, pixar style, close-up face, gentle smile, warm lighting
+elio, a 3d animated boy, pixar style, standing confidently, indoor scene, window light
+elio, a 3d animated character, pixar style, three-quarter view, casual clothing, natural lighting

@@ -1,0 +1,13 @@
+# Video Processing Dependencies
+# Frame extraction, interpolation, synthesis
+
+# Video processing
+av>=10.0.0  # PyAV for fast video decoding
+decord>=0.6.0  # Alternative video decoder
+
+# Scene detection
+scenedetect>=0.6.2
+
+# Frame interpolation (RIFE)
+# Note: Install from source
+# pip install git+https://github.com/hzwer/Practical-RIFE.git

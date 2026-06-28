@@ -1,0 +1,15 @@
+# All Dependencies
+# Install all optional modules for full pipeline functionality
+#
+# Usage:
+#   pip install -r requirements/all.txt
+
+-r core.txt
+-r detection.txt
+-r segmentation.txt
+-r clustering.txt
+-r training.txt
+-r inpainting.txt
+-r enhancement.txt
+-r video.txt
+-r dev.txt

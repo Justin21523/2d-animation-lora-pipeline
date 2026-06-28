@@ -1,0 +1,13 @@
+# Inpainting Dependencies
+# LaMa and PowerPaint background inpainting
+
+# LaMa
+# Note: Install from source
+# pip install git+https://github.com/advimman/lama.git
+
+# PowerPaint (uses diffusers)
+# Covered by training.txt dependencies
+
+# Quality metrics
+lpips>=0.1.4  # For perceptual quality
+pytorch-fid>=0.3.0  # For FID computation

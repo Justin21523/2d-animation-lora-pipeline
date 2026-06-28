@@ -1,0 +1,25 @@
+# Luca Solo Character Test Prompts - SDXL (HUMAN FORM ONLY)
+
+# Portrait variations
+luca, a 3d animated boy, pixar style, curly brown hair, friendly smile, close-up portrait, warm natural lighting
+luca, a 3d animated character, pixar style, Italian boy, cheerful expression, three-quarter view, coastal sunlight
+luca, a 3d animated boy, pixar style, curly hair, curious expression, looking at camera, soft lighting
+luca, a 3d animated character, pixar style, gentle smile, kind expression, warm portrait lighting
+
+# Full body poses
+luca, a 3d animated boy, pixar style, curly brown hair, standing pose, full body, Italian coastal town background
+luca, a 3d animated character, pixar style, walking on cobblestone street, summer day, bright Mediterranean light
+luca, a 3d animated boy, pixar style, sitting on harbor wall, relaxed pose, sunset, warm golden light
+luca, a 3d animated character, pixar style, riding vespa, dynamic pose, Italian village, sunny day
+
+# Different settings
+luca, a 3d animated boy, pixar style, curly brown hair, beach scene, playing in sand, bright sunlight
+luca, a 3d animated character, pixar style, Italian piazza, fountain background, afternoon light, cheerful
+luca, a 3d animated boy, pixar style, pasta shop, indoor scene, warm cozy lighting, friendly atmosphere
+luca, a 3d animated character, pixar style, seaside boardwalk, summer afternoon, bright coastal lighting
+
+# Emotional expressions
+luca, a 3d animated boy, pixar style, curly brown hair, excited happy expression, laughing, joyful scene
+luca, a 3d animated character, pixar style, wonder expression, amazed, looking up, magical atmosphere
+luca, a 3d animated boy, pixar style, brave determined expression, heroic pose, dramatic lighting
+luca, a 3d animated character, pixar style, warm caring smile, kind eyes, soft portrait lighting

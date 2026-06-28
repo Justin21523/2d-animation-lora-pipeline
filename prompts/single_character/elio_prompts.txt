@@ -1,0 +1,25 @@
+# Elio Solo Character Test Prompts - SDXL
+
+# Portrait variations
+elio, a 3d animated boy, pixar style, dark hair, curious expression, close-up portrait, soft natural lighting
+elio, a 3d animated character, pixar style, gentle smile, three-quarter view, warm indoor lighting
+elio, a 3d animated boy, pixar style, thoughtful expression, looking away, window light
+elio, a 3d animated character, pixar style, confident smile, facing camera, professional portrait lighting
+
+# Full body poses
+elio, a 3d animated boy, pixar style, dark hair, standing pose, full body, outdoor natural lighting
+elio, a 3d animated character, pixar style, walking pose, casual clothing, bright daylight, urban background
+elio, a 3d animated boy, pixar style, sitting on chair, relaxed pose, indoor scene, soft lighting
+elio, a 3d animated character, pixar style, reaching upward pose, hopeful expression, inspiring scene
+
+# Different settings
+elio, a 3d animated boy, pixar style, dark hair, home interior, cozy atmosphere, warm evening light
+elio, a 3d animated character, pixar style, outdoor garden, spring scene, bright natural sunlight
+elio, a 3d animated boy, pixar style, library scene, surrounded by books, soft reading light
+elio, a 3d animated character, pixar style, rooftop scene, city skyline background, sunset lighting
+
+# Emotional expressions
+elio, a 3d animated boy, pixar style, dark hair, happy smiling expression, joyful, bright lighting
+elio, a 3d animated character, pixar style, wonder expression, eyes wide, amazed, magical atmosphere
+elio, a 3d animated boy, pixar style, determined expression, focused, dramatic lighting
+elio, a 3d animated character, pixar style, gentle caring smile, kind expression, warm soft lighting

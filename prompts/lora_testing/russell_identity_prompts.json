@@ -1,0 +1,20 @@
+{
+  "character": "Russell",
+  "film": "Up",
+  "trigger_word": "russell",
+  "test_prompts": [
+    "russell, a 3d animated character, pixar style, smooth shading",
+    "russell smiling, a 3d animated character, pixar style",
+    "russell portrait, 3d render, pixar animation style",
+    "close-up of russell, detailed 3d character, pixar quality",
+    "russell standing, full body, 3d animated character",
+    "russell three-quarter view, pixar style, studio lighting"
+  ],
+  "negative_prompt": "2d, flat, sketch, low quality, blurry, deformed",
+  "parameters": {
+    "steps": 30,
+    "cfg_scale": 7.5,
+    "seed": 42,
+    "num_variations": 4
+  }
+}

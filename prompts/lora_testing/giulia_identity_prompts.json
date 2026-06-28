@@ -1,0 +1,20 @@
+{
+  "character": "Giulia",
+  "film": "Luca",
+  "trigger_word": "giulia",
+  "test_prompts": [
+    "giulia, a 3d animated character, pixar style, smooth shading",
+    "giulia smiling, a 3d animated character, pixar style",
+    "giulia portrait, 3d render, pixar animation style",
+    "close-up of giulia, detailed 3d character, pixar quality",
+    "giulia standing, full body, 3d animated character",
+    "giulia three-quarter view, pixar style, studio lighting"
+  ],
+  "negative_prompt": "2d, flat, sketch, low quality, blurry, deformed",
+  "parameters": {
+    "steps": 30,
+    "cfg_scale": 7.5,
+    "seed": 42,
+    "num_variations": 4
+  }
+}

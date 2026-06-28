@@ -1,0 +1,19 @@
+# Training Dependencies
+# LoRA and ControlNet training
+
+# Diffusers ecosystem
+diffusers>=0.25.0
+accelerate>=0.25.0
+transformers>=4.36.0
+
+# LoRA training
+peft>=0.7.0
+
+# Optimization
+bitsandbytes>=0.41.0  # For 8-bit Adam
+lion-pytorch>=0.1.0   # Lion optimizer
+prodigyopt>=1.0       # Prodigy optimizer
+
+# Monitoring
+tensorboard>=2.15.0
+wandb>=0.16.0

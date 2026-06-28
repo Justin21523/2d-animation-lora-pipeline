@@ -1,0 +1,25 @@
+# Miguel Solo Character Test Prompts - SDXL
+
+# Portrait variations
+miguel, a 3d animated boy, pixar style, brown skin, black curly hair, close-up portrait, smiling, warm studio lighting
+miguel, a 3d animated boy, pixar style, brown skin, black curly hair, serious expression, dramatic side lighting
+miguel, a 3d animated character, pixar style, friendly smile, three-quarter view, soft natural lighting
+miguel, a 3d animated boy, pixar style, confident expression, looking at camera, professional portrait lighting
+
+# Full body poses
+miguel, a 3d animated boy, pixar style, brown skin, black curly hair, standing pose, full body, warm outdoor lighting
+miguel, a 3d animated character, pixar style, walking pose, casual outfit, bright daylight, scenic background
+miguel, a 3d animated boy, pixar style, sitting on steps, relaxed pose, afternoon sunlight
+miguel, a 3d animated character, pixar style, dynamic action pose, energetic, motion blur, bright scene
+
+# Different settings
+miguel, a 3d animated boy, pixar style, brown skin, black curly hair, indoor scene, window light, cozy atmosphere
+miguel, a 3d animated character, pixar style, outdoor park, playing guitar, golden hour lighting
+miguel, a 3d animated boy, pixar style, beach scene, summer day, bright sunlight, ocean background
+miguel, a 3d animated character, pixar style, city street, urban background, warm evening light
+
+# Emotional expressions
+miguel, a 3d animated boy, pixar style, brown skin, black curly hair, happy expression, laughing, joyful
+miguel, a 3d animated character, pixar style, thoughtful expression, looking away, soft lighting
+miguel, a 3d animated boy, pixar style, excited expression, arms raised, celebratory pose, bright lighting
+miguel, a 3d animated character, pixar style, gentle smile, kind expression, warm portrait lighting

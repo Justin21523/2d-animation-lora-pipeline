@@ -1,0 +1,58 @@
+# Trio Character Composition Prompts - SDXL
+# Format: Three characters in the same scene
+
+# SDXL Characters: Miguel (Coco), Luca (Luca), Alberto (Luca), Elio (Elio)
+
+# === Group Portraits ===
+miguel, luca, and alberto, three 3d animated characters, pixar style, group portrait, standing together, neutral expressions, studio lighting, high quality
+miguel, luca, and elio, three 3d animated characters, pixar style, group portrait, three-quarter view, friendly smiles, professional lighting
+luca, alberto, and elio, three 3d animated characters, pixar style, close-up group shot, looking at camera, warm lighting
+miguel, alberto, and elio, three 3d animated characters, pixar style, team portrait, side by side, cinematic lighting
+
+# === Interactive Scenes ===
+miguel, luca, and alberto, three 3d animated characters, pixar style, having a conversation, animated gestures, outdoor scene, natural lighting
+miguel, luca, and elio, three 3d animated characters, pixar style, working together on a project, collaborative pose, bright daylight
+luca, alberto, and elio, three 3d animated characters, pixar style, playing a game, energetic movements, sunny afternoon
+miguel, alberto, and elio, three 3d animated characters, pixar style, sharing a laugh, joyful expressions, golden hour lighting
+
+# === Adventure Scenes ===
+miguel, luca, and alberto, three 3d animated characters, pixar style, on an adventure, walking together, scenic background, dramatic lighting
+miguel, luca, and elio, three 3d animated characters, pixar style, exploring a new place, curious expressions, vibrant environment
+luca, alberto, and elio, three 3d animated characters, pixar style, climbing a hill, dynamic poses, sunset lighting
+miguel, alberto, and elio, three 3d animated characters, pixar style, discovering something amazing, excited poses, magical lighting
+
+# === Casual Hangout ===
+miguel, luca, and alberto, three 3d animated characters, pixar style, sitting on a bench, relaxed poses, park setting, soft afternoon light
+miguel, luca, and elio, three 3d animated characters, pixar style, eating ice cream together, happy expressions, summer scene
+luca, alberto, and elio, three 3d animated characters, pixar style, lounging on the grass, laid-back atmosphere, warm sunlight
+miguel, alberto, and elio, three 3d animated characters, pixar style, hanging out at the beach, casual clothing, bright seaside lighting
+
+# === Indoor Scenes ===
+miguel, luca, and alberto, three 3d animated characters, pixar style, in a cozy room, warm interior lighting, comfortable atmosphere
+miguel, luca, and elio, three 3d animated characters, pixar style, in a workshop, focused expressions, task lighting
+luca, alberto, and elio, three 3d animated characters, pixar style, in a library, studying together, soft reading light
+miguel, alberto, and elio, three 3d animated characters, pixar style, in a kitchen, cooking together, warm domestic lighting
+
+# === Celebration Scenes ===
+miguel, luca, and alberto, three 3d animated characters, pixar style, celebrating together, joyful poses, festive atmosphere, colorful lighting
+miguel, luca, and elio, three 3d animated characters, pixar style, birthday party, happy expressions, party decorations, cheerful lighting
+luca, alberto, and elio, three 3d animated characters, pixar style, victory pose, triumphant expressions, spotlight lighting
+miguel, alberto, and elio, three 3d animated characters, pixar style, achievement celebration, proud poses, bright congratulatory lighting
+
+# === Emotional Moments ===
+miguel, luca, and alberto, three 3d animated characters, pixar style, comforting each other, supportive poses, gentle lighting
+miguel, luca, and elio, three 3d animated characters, pixar style, sharing a heartfelt moment, emotional expressions, soft warm light
+luca, alberto, and elio, three 3d animated characters, pixar style, group hug, touching scene, tender lighting
+miguel, alberto, and elio, three 3d animated characters, pixar style, looking at a sunset together, contemplative mood, golden hour
+
+# === Action Scenes ===
+miguel, luca, and alberto, three 3d animated characters, pixar style, running together, motion blur, dynamic composition, bright daylight
+miguel, luca, and elio, three 3d animated characters, pixar style, jumping in the air, synchronized movement, energetic lighting
+luca, alberto, and elio, three 3d animated characters, pixar style, racing each other, competitive poses, vibrant outdoor lighting
+miguel, alberto, and elio, three 3d animated characters, pixar style, performing together, stage presence, theatrical spotlights
+
+# === Creative Scenes ===
+miguel, luca, and alberto, three 3d animated characters, pixar style, making art together, creative expressions, studio environment
+miguel, luca, and elio, three 3d animated characters, pixar style, building something, collaborative effort, workshop lighting
+luca, alberto, and elio, three 3d animated characters, pixar style, playing musical instruments, harmonious scene, stage lighting
+miguel, alberto, and elio, three 3d animated characters, pixar style, storytelling session, engaged expressions, cozy fireplace light

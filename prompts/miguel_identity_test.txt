@@ -1,0 +1,11 @@
+# Miguel Rivera Identity Test Prompts
+# Used for automatic checkpoint evaluation during training
+
+a 3d animated character, pixar style, miguel rivera, portrait, neutral expression, studio lighting
+a 3d animated character, pixar style, miguel rivera, full body, standing with guitar, natural lighting
+a 3d animated character, pixar style, miguel rivera, close-up face, smiling, soft lighting
+a 3d animated character, pixar style, miguel rivera, three-quarter view, wearing red hoodie, cinematic lighting
+a 3d animated character, pixar style, miguel rivera, playing guitar, warm indoor lighting
+a 3d animated character, pixar style, miguel rivera, at dia de los muertos celebration, colorful lighting
+a 3d animated character, pixar style, miguel rivera, side profile, determined expression, dramatic lighting
+a 3d animated character, pixar style, miguel rivera, full body, running pose, outdoor lighting

@@ -1,0 +1,170 @@
+# Expression Vocabulary for Synthetic Data Generation
+# Comprehensive taxonomy of facial expressions for 3D animated characters
+# Used by prompt_generator.py to create diverse expression-focused prompts
+
+version: "1.0.0"
+description: "Facial expression vocabulary for Pixar-style 3D character LoRA training"
+
+# Basic Emotions (Primary expressions based on Ekman's model)
+basic_emotions:
+  - id: happy
+    name: "happy"
+    synonyms: ["joyful", "cheerful", "delighted", "pleased"]
+    intensity_modifiers: ["slightly", "moderately", "very", "extremely"]
+    description: "Upturned mouth corners, raised cheeks, crinkled eyes"
+
+  - id: sad
+    name: "sad"
+    synonyms: ["sorrowful", "melancholic", "downcast", "gloomy"]
+    intensity_modifiers: ["slightly", "moderately", "very", "deeply"]
+    description: "Downturned mouth, lowered brows, drooping eyelids"
+
+  - id: angry
+    name: "angry"
+    synonyms: ["furious", "irritated", "mad", "enraged"]
+    intensity_modifiers: ["slightly", "moderately", "very", "extremely"]
+    description: "Furrowed brows, tightened jaw, narrowed eyes"
+
+  - id: fearful
+    name: "fearful"
+    synonyms: ["scared", "frightened", "terrified", "alarmed"]
+    intensity_modifiers: ["slightly", "moderately", "very", "extremely"]
+    description: "Wide eyes, raised eyebrows, open mouth"
+
+  - id: surprised
+    name: "surprised"
+    synonyms: ["astonished", "amazed", "shocked", "startled"]
+    intensity_modifiers: ["mildly", "moderately", "very", "completely"]
+    description: "Raised eyebrows, wide eyes, open mouth"
+
+  - id: disgusted
+    name: "disgusted"
+    synonyms: ["repulsed", "revolted", "nauseated"]
+    intensity_modifiers: ["slightly", "moderately", "very", "extremely"]
+    description: "Wrinkled nose, raised upper lip, squinted eyes"
+
+# Complex Emotions (Secondary/social emotions)
+complex_emotions:
+  - id: confused
+    name: "confused"
+    synonyms: ["puzzled", "perplexed", "bewildered", "baffled"]
+    description: "Furrowed brow, tilted head, questioning eyes"
+
+  - id: excited
+    name: "excited"
+    synonyms: ["enthusiastic", "thrilled", "eager", "animated"]
+    description: "Wide smile, bright eyes, raised eyebrows"
+
+  - id: nervous
+    name: "nervous"
+    synonyms: ["anxious", "worried", "uneasy", "tense"]
+    description: "Tight lips, wide eyes, slight frown"
+
+  - id: determined
+    name: "determined"
+    synonyms: ["focused", "resolute", "committed", "intense"]
+    description: "Firm jaw, narrowed eyes, straight brows"
+
+  - id: embarrassed
+    name: "embarrassed"
+    synonyms: ["sheepish", "ashamed", "self-conscious", "awkward"]
+    description: "Averted gaze, slight smile, raised shoulders"
+
+  - id: proud
+    name: "proud"
+    synonyms: ["confident", "satisfied", "accomplished"]
+    description: "Raised chin, slight smile, bright eyes"
+
+  - id: mischievous
+    name: "mischievous"
+    synonyms: ["playful", "impish", "sly", "cheeky"]
+    description: "Crooked smile, raised eyebrow, knowing look"
+
+  - id: thoughtful
+    name: "thoughtful"
+    synonyms: ["contemplative", "pensive", "reflective"]
+    description: "Slightly furrowed brow, distant gaze, relaxed mouth"
+
+  - id: curious
+    name: "curious"
+    synonyms: ["inquisitive", "interested", "intrigued"]
+    description: "Raised eyebrows, wide eyes, slightly open mouth"
+
+# Neutral States
+neutral_states:
+  - id: neutral
+    name: "neutral"
+    synonyms: ["calm", "relaxed", "serene", "composed"]
+    description: "Relaxed facial muscles, soft eyes, slight smile"
+
+  - id: serious
+    name: "serious"
+    synonyms: ["solemn", "stern", "grave"]
+    description: "Straight mouth, level gaze, firm expression"
+
+  - id: sleepy
+    name: "sleepy"
+    synonyms: ["drowsy", "tired", "weary"]
+    description: "Heavy eyelids, relaxed jaw, slight droop"
+
+# Expression Attributes (Can be combined with basic emotions)
+attributes:
+  intensity:
+    - "subtle"
+    - "mild"
+    - "moderate"
+    - "strong"
+    - "intense"
+    - "extreme"
+
+  mouth_states:
+    - "closed mouth"
+    - "slightly open mouth"
+    - "open mouth"
+    - "wide open mouth"
+    - "smiling"
+    - "grinning"
+    - "frowning"
+    - "pursed lips"
+    - "parted lips"
+
+  eye_states:
+    - "wide eyes"
+    - "narrowed eyes"
+    - "half-closed eyes"
+    - "closed eyes"
+    - "squinting"
+    - "eyes looking up"
+    - "eyes looking down"
+    - "side glance"
+
+  brow_positions:
+    - "raised eyebrows"
+    - "furrowed brows"
+    - "one raised eyebrow"
+    - "relaxed brows"
+    - "knitted brows"
+
+# Template Patterns for Expression Prompts
+prompt_templates:
+  simple: "{character_token}, {expression} expression, {quality_tags}"
+  detailed: "{character_token}, {intensity} {expression} expression, {mouth_state}, {eye_state}, {quality_tags}"
+  with_context: "{character_token}, {expression} expression, {body_framing}, {lighting}, {quality_tags}"
+  emotional_action: "{character_token}, {expression} while {action}, {quality_tags}"
+
+# Incompatible Combinations (expressions that shouldn't be mixed)
+incompatible_pairs:
+  - ["happy", "sad"]
+  - ["angry", "joyful"]
+  - ["fearful", "confident"]
+  - ["excited", "sleepy"]
+  - ["proud", "embarrassed"]
+
+# Quality Tags (always appended)
+quality_tags:
+  - "pixar style 3d animation"
+  - "high quality"
+  - "detailed facial features"
+  - "professional lighting"
+  - "clean render"
+  - "smooth shading"

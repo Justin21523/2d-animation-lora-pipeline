@@ -1,0 +1,22 @@
+# Duo Character Composition Prompts - SDXL
+# Format: Two characters in同一場景
+
+# Close interactions
+miguel and alberto, two 3d animated characters, pixar style, standing together, friendly conversation, warm lighting, outdoor scene
+miguel and elio, two 3d animated characters, pixar style, shaking hands, meeting scene, soft natural lighting
+alberto and elio, two 3d animated characters, pixar style, side by side, casual pose, studio lighting
+
+# Dynamic scenes
+miguel and alberto, two 3d animated characters, pixar style, full body, walking together, golden hour lighting, scenic background
+miguel and elio, two 3d animated characters, pixar style, sitting on a bench, talking, afternoon sunlight
+alberto and elio, two 3d animated characters, pixar style, playing together, energetic pose, bright daylight
+
+# Portrait style
+miguel and alberto, two 3d animated characters, pixar style, double portrait, facing camera, neutral expressions, professional studio lighting
+miguel and elio, two 3d animated characters, pixar style, close-up faces, smiling, soft rim lighting
+alberto and elio, two 3d animated characters, pixar style, three-quarter view portraits, dramatic lighting
+
+# Themed scenes
+miguel and alberto, two 3d animated characters, pixar style, at the beach, summer scene, bright sunlight
+miguel and elio, two 3d animated characters, pixar style, in a city street, urban background, cinematic lighting
+alberto and elio, two 3d animated characters, pixar style, in a park, nature setting, dappled sunlight

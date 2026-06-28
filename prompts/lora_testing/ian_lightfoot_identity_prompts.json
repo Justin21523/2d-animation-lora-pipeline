@@ -1,0 +1,20 @@
+{
+  "character": "Ian Lightfoot",
+  "film": "Onward",
+  "trigger_word": "ian_lightfoot",
+  "test_prompts": [
+    "ian_lightfoot, a 3d animated character, pixar style, smooth shading",
+    "ian_lightfoot smiling, a 3d animated character, pixar style",
+    "ian_lightfoot portrait, 3d render, pixar animation style",
+    "close-up of ian_lightfoot, detailed 3d character, pixar quality",
+    "ian_lightfoot standing, full body, 3d animated character",
+    "ian_lightfoot three-quarter view, pixar style, studio lighting"
+  ],
+  "negative_prompt": "2d, flat, sketch, low quality, blurry, deformed",
+  "parameters": {
+    "steps": 30,
+    "cfg_scale": 7.5,
+    "seed": 42,
+    "num_variations": 4
+  }
+}

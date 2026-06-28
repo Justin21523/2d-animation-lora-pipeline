@@ -1,0 +1,19 @@
+# Miguel + Elio Composition Prompts - SDXL
+
+# Together scenes
+miguel and elio, two 3d animated characters, pixar style, shaking hands, meeting scene, soft natural lighting
+miguel and elio, two 3d animated characters, pixar style, sitting on a bench, talking, afternoon sunlight
+miguel and elio, two 3d animated characters, pixar style, close-up faces, smiling, soft rim lighting
+miguel and elio, two 3d animated boys, pixar style, adventure scene, hiking together, mountain background
+
+# Individual miguel prompts
+miguel, a 3d animated boy, pixar style, brown skin, black curly hair, confident expression, warm lighting
+miguel, a 3d animated character, pixar style, sitting pose, relaxed, natural outdoor lighting
+miguel, a 3d animated boy, pixar style, waving gesture, friendly, bright daylight
+miguel, a 3d animated character, pixar style, portrait shot, neutral background, studio lighting
+
+# Individual elio prompts
+elio, a 3d animated boy, pixar style, dark hair, curious expression, soft lighting, full body portrait
+elio, a 3d animated character, pixar style, close-up face, gentle smile, warm lighting
+elio, a 3d animated boy, pixar style, standing confidently, indoor scene, window light
+elio, a 3d animated character, pixar style, three-quarter view, casual clothing, natural lighting

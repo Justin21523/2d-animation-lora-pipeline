@@ -1,0 +1,25 @@
+# Alberto Solo Character Test Prompts - SDXL (HUMAN FORM ONLY)
+
+# Portrait variations
+alberto, a 3d animated boy, pixar style, dark hair, friendly smile, close-up portrait, sunny coastal lighting
+alberto, a 3d animated character, pixar style, Italian boy, confident expression, three-quarter view, beach background
+alberto, a 3d animated boy, pixar style, playful expression, looking at camera, warm summer lighting
+alberto, a 3d animated character, pixar style, charming smile, portrait, soft natural light
+
+# Full body poses
+alberto, a 3d animated boy, pixar style, dark hair, standing on beach, full body, bright Mediterranean daylight
+alberto, a 3d animated character, pixar style, walking on shore, casual summer outfit, sunny day
+alberto, a 3d animated boy, pixar style, sitting on harbor wall, relaxed pose, ocean background, golden hour
+alberto, a 3d animated character, pixar style, dynamic jumping pose, energetic, beach scene, splashing water
+
+# Different settings
+alberto, a 3d animated boy, pixar style, Italian coastal town, summer day, bright Mediterranean sunlight
+alberto, a 3d animated character, pixar style, beach sunset scene, golden hour, warm atmospheric lighting
+alberto, a 3d animated boy, pixar style, harbor scene with boats, afternoon light, coastal village
+alberto, a 3d animated character, pixar style, seaside cafe, outdoor table, warm evening light
+
+# Emotional expressions
+alberto, a 3d animated boy, pixar style, dark hair, happy laughing expression, joyful, bright sunny scene
+alberto, a 3d animated character, pixar style, curious expression, looking up at sky, soft lighting
+alberto, a 3d animated boy, pixar style, excited expression, arms spread wide, celebratory, beach day
+alberto, a 3d animated character, pixar style, gentle friendly smile, kind expression, warm portrait lighting

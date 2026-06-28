@@ -1,0 +1,19 @@
+# Elio + Luca Composition Prompts - SDXL
+
+# Together scenes
+elio and luca, two 3d animated boys, pixar style, standing together, friendly conversation, warm coastal lighting
+elio and luca, two 3d animated characters, pixar style, sitting by the sea, talking, sunset lighting
+elio and luca, two 3d animated boys, pixar style, walking on the beach, summer scene, bright sunlight
+elio and luca, two 3d animated characters, pixar style, double portrait, facing camera, soft natural lighting
+
+# Individual elio prompts
+elio, a 3d animated boy, pixar style, dark hair, curious expression, soft lighting, full body portrait
+elio, a 3d animated character, pixar style, close-up face, gentle smile, warm lighting
+elio, a 3d animated boy, pixar style, standing confidently, indoor scene, window light
+elio, a 3d animated character, pixar style, three-quarter view, casual clothing, natural lighting
+
+# Individual luca prompts
+luca, a 3d animated boy, pixar style, curly brown hair, friendly smile, Italian coastal town background
+luca, a 3d animated character, pixar style, close-up portrait, warm expression, golden hour lighting
+luca, a 3d animated sea monster boy, pixar style, underwater scene, blue-green scales, swimming
+luca, a 3d animated character, pixar style, standing pose, summer outfit, bright daylight

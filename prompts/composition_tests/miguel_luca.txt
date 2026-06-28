@@ -1,0 +1,19 @@
+# Miguel + Luca Composition Prompts - SDXL
+
+# Together scenes
+miguel and luca, two 3d animated boys, pixar style, standing together, friendly greeting, warm lighting
+miguel and luca, two 3d animated characters, pixar style, sitting on a wall, chatting, Mediterranean sunlight
+miguel and luca, two 3d animated boys, pixar style, walking along the coast, summer scene, bright daylight
+miguel and luca, two 3d animated characters, pixar style, double portrait, smiling, soft studio lighting
+
+# Individual miguel prompts
+miguel, a 3d animated boy, pixar style, brown skin, black curly hair, confident expression, warm lighting
+miguel, a 3d animated character, pixar style, close-up portrait, friendly smile, professional lighting
+miguel, a 3d animated boy, pixar style, full body shot, standing pose, outdoor natural lighting
+miguel, a 3d animated character, pixar style, three-quarter view, casual outfit, soft daylight
+
+# Individual luca prompts
+luca, a 3d animated boy, pixar style, curly brown hair, friendly smile, Italian coastal town background
+luca, a 3d animated character, pixar style, close-up portrait, warm expression, golden hour lighting
+luca, a 3d animated sea monster boy, pixar style, underwater scene, blue-green scales, swimming
+luca, a 3d animated character, pixar style, standing pose, summer outfit, bright daylight

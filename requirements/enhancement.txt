@@ -1,0 +1,17 @@
+# Enhancement Dependencies
+# Face restoration and upscaling
+
+# RealESRGAN
+# Note: Install from source
+# pip install git+https://github.com/xinntao/Real-ESRGAN.git
+
+# CodeFormer
+# Note: Install from source
+# pip install git+https://github.com/sczhou/CodeFormer.git
+
+# BasicSR (required by RealESRGAN)
+basicsr>=1.4.2
+
+# Face parsing
+facexlib>=0.3.0
+gfpgan>=1.3.8

@@ -1,0 +1,19 @@
+# Alberto + Luca Composition Prompts - SDXL
+
+# Together scenes (brothers from same movie)
+alberto and luca, two 3d animated sea monster boys, pixar style, best friends, standing together, Italian coastal background
+alberto and luca, two 3d animated characters, pixar style, underwater scene, swimming together, blue-green lighting
+alberto and luca, two 3d animated boys, pixar style, on the beach, summer day, bright Mediterranean sunlight
+alberto and luca, two 3d animated characters, pixar style, double portrait, friendly expressions, warm lighting
+
+# Individual alberto prompts
+alberto, a 3d animated boy, pixar style, green scales, sea monster features, smiling, sunny day, full body
+alberto, a 3d animated character, pixar style, close-up portrait, friendly expression, soft lighting
+alberto, a 3d animated sea monster boy, pixar style, swimming pose, underwater scene, blue-green lighting
+alberto, a 3d animated character, pixar style, standing confidently, beach background, golden hour
+
+# Individual luca prompts
+luca, a 3d animated boy, pixar style, curly brown hair, friendly smile, Italian coastal town background
+luca, a 3d animated character, pixar style, close-up portrait, warm expression, golden hour lighting
+luca, a 3d animated sea monster boy, pixar style, underwater scene, blue-green scales, swimming
+luca, a 3d animated character, pixar style, standing pose, summer outfit, bright daylight

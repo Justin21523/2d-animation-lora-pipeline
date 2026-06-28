@@ -1,0 +1,316 @@
+# Pose Vocabulary for Synthetic Data Generation
+# Comprehensive taxonomy of body poses and camera angles for 3D animated characters
+# Used by prompt_generator.py to create diverse pose-focused prompts
+
+version: "1.0.0"
+description: "Body pose and camera angle vocabulary for Pixar-style 3D character LoRA training"
+
+# Body Poses (Character's body position and orientation)
+body_poses:
+  standing:
+    - id: standing_neutral
+      name: "standing"
+      synonyms: ["upright", "standing position"]
+      description: "Character standing straight, neutral posture"
+
+    - id: standing_confident
+      name: "standing confidently"
+      synonyms: ["confident stance", "power pose"]
+      description: "Standing with chest out, shoulders back"
+
+    - id: standing_casual
+      name: "standing casually"
+      synonyms: ["relaxed stance", "casual posture"]
+      description: "Weight on one leg, relaxed shoulders"
+
+    - id: standing_hands_on_hips
+      name: "standing with hands on hips"
+      synonyms: ["akimbo pose"]
+      description: "Arms bent, hands resting on hips"
+
+  sitting:
+    - id: sitting_chair
+      name: "sitting"
+      synonyms: ["seated", "sitting down"]
+      description: "Sitting upright in a chair"
+
+    - id: sitting_crossed_legs
+      name: "sitting cross-legged"
+      synonyms: ["sitting criss-cross"]
+      description: "Sitting on ground with legs crossed"
+
+    - id: sitting_relaxed
+      name: "sitting relaxed"
+      synonyms: ["lounging", "reclining"]
+      description: "Sitting with relaxed posture, leaning back"
+
+  action_poses:
+    - id: walking
+      name: "walking"
+      synonyms: ["striding", "stepping"]
+      description: "Mid-walk pose, one foot forward"
+
+    - id: running
+      name: "running"
+      synonyms: ["sprinting", "dashing"]
+      description: "Running pose with dynamic motion"
+
+    - id: jumping
+      name: "jumping"
+      synonyms: ["leaping", "mid-jump"]
+      description: "Airborne pose, legs bent"
+
+    - id: reaching
+      name: "reaching forward"
+      synonyms: ["extending arm", "reaching out"]
+      description: "Arm extended forward, reaching gesture"
+
+    - id: pointing
+      name: "pointing"
+      synonyms: ["gesturing", "indicating"]
+      description: "One arm extended, finger pointing"
+
+    - id: waving
+      name: "waving"
+      synonyms: ["waving hand", "greeting gesture"]
+      description: "Hand raised, waving motion"
+
+    - id: arms_crossed
+      name: "arms crossed"
+      synonyms: ["defensive pose", "closed posture"]
+      description: "Arms folded across chest"
+
+    - id: hands_clasped
+      name: "hands clasped"
+      synonyms: ["hands together", "praying gesture"]
+      description: "Hands held together in front of body"
+
+  dynamic_poses:
+    - id: dancing
+      name: "dancing"
+      synonyms: ["dance pose", "celebratory movement"]
+      description: "Energetic dance pose"
+
+    - id: falling
+      name: "falling"
+      synonyms: ["tumbling", "losing balance"]
+      description: "Off-balance falling pose"
+
+    - id: climbing
+      name: "climbing"
+      synonyms: ["scaling", "ascending"]
+      description: "Vertical climbing pose"
+
+    - id: crouching
+      name: "crouching"
+      synonyms: ["squatting", "crouched down"]
+      description: "Low crouch position"
+
+# Camera Angles (View perspective)
+camera_angles:
+  horizontal:
+    - id: front_view
+      name: "front view"
+      synonyms: ["frontal view", "facing camera"]
+      description: "Character directly facing camera"
+      weight: 0.25
+
+    - id: three_quarter_view
+      name: "three-quarter view"
+      synonyms: ["3/4 view", "45-degree angle"]
+      description: "Character at 45-degree angle"
+      weight: 0.30
+
+    - id: side_view
+      name: "side view"
+      synonyms: ["profile view", "lateral view"]
+      description: "Character shown from the side"
+      weight: 0.15
+
+    - id: back_view
+      name: "back view"
+      synonyms: ["rear view", "from behind"]
+      description: "Character seen from behind"
+      weight: 0.10
+
+    - id: over_shoulder
+      name: "over the shoulder"
+      synonyms: ["OTS view", "shoulder angle"]
+      description: "Camera behind shoulder looking forward"
+      weight: 0.20
+
+  vertical:
+    - id: eye_level
+      name: "eye level"
+      synonyms: ["straight on", "neutral height"]
+      description: "Camera at character's eye height"
+      weight: 0.40
+
+    - id: low_angle
+      name: "low angle"
+      synonyms: ["worm's eye view", "looking up"]
+      description: "Camera below character looking up"
+      weight: 0.20
+
+    - id: high_angle
+      name: "high angle"
+      synonyms: ["bird's eye view", "looking down"]
+      description: "Camera above character looking down"
+      weight: 0.20
+
+    - id: Dutch_angle
+      name: "Dutch angle"
+      synonyms: ["tilted camera", "canted angle"]
+      description: "Camera tilted at an angle"
+      weight: 0.10
+
+    - id: extreme_low_angle
+      name: "extreme low angle"
+      synonyms: ["dramatic upward angle"]
+      description: "Camera very low, dramatic upward view"
+      weight: 0.05
+
+    - id: extreme_high_angle
+      name: "extreme high angle"
+      synonyms: ["overhead view", "top-down"]
+      description: "Camera directly above looking down"
+      weight: 0.05
+
+# Framing (How much of character is visible)
+framing:
+  - id: full_body
+    name: "full body"
+    synonyms: ["wide shot", "full figure"]
+    description: "Entire character visible head to toe"
+    weight: 0.25
+
+  - id: three_quarter_body
+    name: "three-quarter body"
+    synonyms: ["7/8 shot", "knees up"]
+    description: "From head to mid-thigh or knees"
+    weight: 0.20
+
+  - id: medium_shot
+    name: "medium shot"
+    synonyms: ["waist up", "mid shot"]
+    description: "From head to waist"
+    weight: 0.25
+
+  - id: close_up
+    name: "close-up"
+    synonyms: ["head and shoulders", "tight shot"]
+    description: "Face and upper shoulders"
+    weight: 0.20
+
+  - id: extreme_close_up
+    name: "extreme close-up"
+    synonyms: ["ECU", "macro shot"]
+    description: "Face only, very tight framing"
+    weight: 0.10
+
+# Arm Positions
+arm_positions:
+  - "arms at sides"
+  - "arms crossed"
+  - "one arm raised"
+  - "both arms raised"
+  - "arms behind back"
+  - "hands on hips"
+  - "hands clasped in front"
+  - "hands in pockets"
+  - "arms outstretched"
+  - "one hand on hip"
+
+# Leg Positions
+leg_positions:
+  - "feet together"
+  - "feet apart"
+  - "one leg forward"
+  - "legs crossed"
+  - "one leg raised"
+  - "kneeling"
+  - "wide stance"
+  - "balanced on one leg"
+
+# Head Positions
+head_positions:
+  - "head straight"
+  - "head tilted left"
+  - "head tilted right"
+  - "head tilted back"
+  - "head tilted forward"
+  - "looking up"
+  - "looking down"
+  - "head turned to side"
+
+# Pose Attributes
+attributes:
+  symmetry:
+    - "symmetrical pose"
+    - "asymmetrical pose"
+    - "contrapposto"
+
+  energy_level:
+    - "static pose"
+    - "dynamic pose"
+    - "action pose"
+    - "relaxed pose"
+    - "tense pose"
+
+  balance:
+    - "balanced"
+    - "off-balance"
+    - "stable stance"
+    - "dynamic balance"
+
+# Prompt Templates for Pose Prompts
+prompt_templates:
+  simple: "{character_token}, {body_pose}, {framing}, {quality_tags}"
+  with_angle: "{character_token}, {body_pose}, {camera_angle}, {framing}, {quality_tags}"
+  detailed: "{character_token}, {body_pose}, {arm_position}, {camera_angle}, {framing}, {lighting}, {quality_tags}"
+  action_focused: "{character_token}, {action_pose}, {camera_angle}, {energy_level}, {quality_tags}"
+
+# Incompatible Combinations
+incompatible_pairs:
+  - ["sitting", "running"]
+  - ["standing", "sitting"]
+  - ["jumping", "sitting"]
+  - ["extreme close-up", "full body"]
+  - ["close-up", "full body"]
+
+# Pose Variety Distribution (for balanced dataset)
+distribution_targets:
+  body_pose_types:
+    standing: 0.35
+    sitting: 0.15
+    action: 0.35
+    dynamic: 0.15
+
+  camera_horizontal:
+    front: 0.25
+    three_quarter: 0.30
+    side: 0.15
+    back: 0.10
+    over_shoulder: 0.20
+
+  camera_vertical:
+    eye_level: 0.40
+    low_angle: 0.20
+    high_angle: 0.20
+    extreme_angles: 0.10
+    Dutch: 0.10
+
+  framing:
+    full_body: 0.30
+    medium: 0.35
+    close_up: 0.25
+    extreme_close_up: 0.10
+
+# Quality Tags
+quality_tags:
+  - "pixar style 3d animation"
+  - "high quality"
+  - "professional pose"
+  - "clean composition"
+  - "studio lighting"
+  - "smooth shading"

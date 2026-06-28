@@ -1,0 +1,352 @@
+# Action Vocabulary for Synthetic Data Generation
+# Comprehensive taxonomy of character actions and activities for 3D animated characters
+# Used by prompt_generator.py to create diverse action-focused prompts
+
+version: "1.0.0"
+description: "Character action vocabulary for Pixar-style 3D character LoRA training"
+
+# Movement Actions
+movement:
+  locomotion:
+    - id: walking
+      name: "walking"
+      synonyms: ["striding", "stepping", "strolling"]
+      description: "Character walking forward"
+      compatible_poses: ["walking", "standing"]
+
+    - id: running
+      name: "running"
+      synonyms: ["sprinting", "jogging", "dashing"]
+      description: "Character running with speed"
+      compatible_poses: ["running", "dynamic"]
+
+    - id: jumping
+      name: "jumping"
+      synonyms: ["leaping", "hopping", "bounding"]
+      description: "Character jumping into the air"
+      compatible_poses: ["jumping", "dynamic"]
+
+    - id: climbing
+      name: "climbing"
+      synonyms: ["scaling", "ascending", "clambering"]
+      description: "Character climbing upward"
+      compatible_poses: ["climbing", "reaching"]
+
+    - id: crawling
+      name: "crawling"
+      synonyms: ["creeping", "crawling on all fours"]
+      description: "Character moving on hands and knees"
+      compatible_poses: ["crouching", "dynamic"]
+
+    - id: sneaking
+      name: "sneaking"
+      synonyms: ["tiptoeing", "creeping stealthily"]
+      description: "Character moving quietly and carefully"
+      compatible_poses: ["crouching", "walking"]
+
+  rotation:
+    - id: turning
+      name: "turning around"
+      synonyms: ["rotating", "spinning", "pivoting"]
+      description: "Character rotating or turning"
+
+    - id: looking_back
+      name: "looking back"
+      synonyms: ["glancing behind", "looking over shoulder"]
+      description: "Character turning head to look behind"
+
+# Hand Gestures & Arm Actions
+hand_actions:
+  gestures:
+    - id: waving
+      name: "waving"
+      synonyms: ["waving hand", "greeting gesture", "saying hello"]
+      description: "Hand raised in waving motion"
+      compatible_expressions: ["happy", "friendly", "excited"]
+
+    - id: pointing
+      name: "pointing"
+      synonyms: ["gesturing", "indicating", "directing"]
+      description: "Finger pointing at something"
+      compatible_expressions: ["surprised", "excited", "angry"]
+
+    - id: thumbs_up
+      name: "giving thumbs up"
+      synonyms: ["approval gesture", "positive sign"]
+      description: "Thumb raised in approval"
+      compatible_expressions: ["happy", "proud", "confident"]
+
+    - id: waving_goodbye
+      name: "waving goodbye"
+      synonyms: ["farewell gesture", "bidding farewell"]
+      description: "Hand waving in goodbye motion"
+      compatible_expressions: ["sad", "neutral", "happy"]
+
+    - id: shrugging
+      name: "shrugging"
+      synonyms: ["shrug gesture", "expressing uncertainty"]
+      description: "Shoulders raised in shrug"
+      compatible_expressions: ["confused", "neutral", "uncertain"]
+
+  reaching:
+    - id: reaching_up
+      name: "reaching up"
+      synonyms: ["stretching upward", "extending arms up"]
+      description: "Arms extended upward"
+
+    - id: reaching_forward
+      name: "reaching forward"
+      synonyms: ["extending arms forward", "reaching out"]
+      description: "Arms extended forward"
+
+    - id: reaching_down
+      name: "reaching down"
+      synonyms: ["bending to reach", "extending down"]
+      description: "Arms extended downward"
+
+  holding:
+    - id: holding_object
+      name: "holding an object"
+      synonyms: ["grasping", "carrying something"]
+      description: "Hands holding an invisible object"
+
+    - id: arms_crossed
+      name: "crossing arms"
+      synonyms: ["folding arms", "defensive posture"]
+      description: "Arms folded across chest"
+      compatible_expressions: ["angry", "determined", "confident"]
+
+# Interaction Actions
+interaction:
+  communication:
+    - id: talking
+      name: "talking"
+      synonyms: ["speaking", "conversing", "chatting"]
+      description: "Character engaged in speech"
+      compatible_expressions: ["happy", "excited", "serious"]
+
+    - id: shouting
+      name: "shouting"
+      synonyms: ["yelling", "calling out", "exclaiming"]
+      description: "Character shouting loudly"
+      compatible_expressions: ["angry", "excited", "fearful"]
+
+    - id: whispering
+      name: "whispering"
+      synonyms: ["speaking quietly", "hushed voice"]
+      description: "Character whispering softly"
+      compatible_expressions: ["nervous", "mischievous", "serious"]
+
+    - id: laughing
+      name: "laughing"
+      synonyms: ["chuckling", "giggling", "guffawing"]
+      description: "Character laughing"
+      compatible_expressions: ["happy", "joyful", "mischievous"]
+
+    - id: crying
+      name: "crying"
+      synonyms: ["weeping", "sobbing", "tearing up"]
+      description: "Character crying with emotion"
+      compatible_expressions: ["sad", "fearful", "overwhelmed"]
+
+  physical:
+    - id: hugging
+      name: "hugging"
+      synonyms: ["embracing", "holding close"]
+      description: "Arms wrapped in hugging gesture"
+      compatible_expressions: ["happy", "relieved", "sad"]
+
+    - id: high_five
+      name: "giving high five"
+      synonyms: ["hand slap", "celebratory gesture"]
+      description: "Hand raised for high five"
+      compatible_expressions: ["excited", "happy", "proud"]
+
+    - id: pushing
+      name: "pushing"
+      synonyms: ["shoving", "pressing forward"]
+      description: "Arms extended in pushing motion"
+      compatible_expressions: ["determined", "angry", "fearful"]
+
+    - id: pulling
+      name: "pulling"
+      synonyms: ["tugging", "dragging"]
+      description: "Arms pulling backward"
+      compatible_expressions: ["determined", "struggling"]
+
+# Physical Activities
+activities:
+  sports:
+    - id: throwing
+      name: "throwing"
+      synonyms: ["tossing", "hurling", "pitching"]
+      description: "Arm in throwing motion"
+
+    - id: catching
+      name: "catching"
+      synonyms: ["grabbing", "intercepting"]
+      description: "Arms extended to catch"
+
+    - id: kicking
+      name: "kicking"
+      synonyms: ["booting", "striking with foot"]
+      description: "Leg extended in kicking motion"
+
+  expressive:
+    - id: dancing
+      name: "dancing"
+      synonyms: ["grooving", "moving to music"]
+      description: "Character in dance pose"
+      compatible_expressions: ["happy", "excited", "joyful"]
+
+    - id: celebrating
+      name: "celebrating"
+      synonyms: ["cheering", "rejoicing", "victory pose"]
+      description: "Arms raised in celebration"
+      compatible_expressions: ["excited", "happy", "proud"]
+
+    - id: stretching
+      name: "stretching"
+      synonyms: ["limbering up", "extending limbs"]
+      description: "Character stretching body"
+
+# Resting/Static Actions
+resting:
+  - id: sitting_down
+    name: "sitting down"
+    synonyms: ["taking a seat", "sitting"]
+    description: "Character in seated position"
+    compatible_poses: ["sitting"]
+
+  - id: standing_still
+    name: "standing still"
+    synonyms: ["stationary", "at rest"]
+    description: "Character standing without movement"
+    compatible_poses: ["standing"]
+
+  - id: leaning
+    name: "leaning"
+    synonyms: ["resting against", "propped up"]
+    description: "Body leaning against surface"
+
+  - id: resting
+    name: "resting"
+    synonyms: ["relaxing", "taking a break"]
+    description: "Character in relaxed resting pose"
+
+# Thinking/Contemplative Actions
+contemplative:
+  - id: thinking
+    name: "thinking"
+    synonyms: ["pondering", "considering", "contemplating"]
+    description: "Character in thoughtful pose"
+    compatible_expressions: ["thoughtful", "curious", "confused"]
+
+  - id: hand_on_chin
+    name: "hand on chin"
+    synonyms: ["thinking gesture", "contemplative pose"]
+    description: "Hand resting on chin"
+    compatible_expressions: ["thoughtful", "curious"]
+
+  - id: scratching_head
+    name: "scratching head"
+    synonyms: ["confused gesture"]
+    description: "Hand scratching head"
+    compatible_expressions: ["confused", "puzzled"]
+
+# Reaction Actions
+reactions:
+  - id: surprised_jump
+    name: "jumping in surprise"
+    synonyms: ["startled jump", "shocked reaction"]
+    description: "Character jumping from surprise"
+    compatible_expressions: ["surprised", "fearful"]
+
+  - id: ducking
+    name: "ducking"
+    synonyms: ["dodging", "crouching quickly"]
+    description: "Quick downward motion"
+    compatible_expressions: ["fearful", "surprised"]
+
+  - id: covering_face
+    name: "covering face"
+    synonyms: ["hiding face", "face in hands"]
+    description: "Hands covering face"
+    compatible_expressions: ["embarrassed", "sad", "fearful"]
+
+  - id: covering_ears
+    name: "covering ears"
+    synonyms: ["blocking sound", "hands over ears"]
+    description: "Hands covering ears"
+    compatible_expressions: ["fearful", "annoyed"]
+
+# Action Attributes
+attributes:
+  intensity:
+    - "gentle"
+    - "moderate"
+    - "energetic"
+    - "vigorous"
+    - "explosive"
+
+  speed:
+    - "slow"
+    - "normal speed"
+    - "fast"
+    - "rapid"
+
+  direction:
+    - "forward"
+    - "backward"
+    - "upward"
+    - "downward"
+    - "sideways"
+    - "circular"
+
+# Prompt Templates for Action Prompts
+prompt_templates:
+  simple: "{character_token}, {action}, {quality_tags}"
+  with_expression: "{character_token}, {action}, {expression} expression, {quality_tags}"
+  detailed: "{character_token}, {action}, {intensity} {speed}, {camera_angle}, {framing}, {quality_tags}"
+  context_rich: "{character_token}, {action} with {expression} expression, {camera_angle}, {lighting}, {quality_tags}"
+
+# Action Categories (for balanced sampling)
+action_categories:
+  movement: 0.30
+  hand_actions: 0.25
+  interaction: 0.20
+  activities: 0.15
+  reactions: 0.10
+
+# Expression-Action Compatibility Matrix
+# Format: action_id -> [compatible_expression_ids]
+expression_compatibility:
+  waving: ["happy", "excited", "friendly", "neutral"]
+  running: ["determined", "fearful", "excited", "happy"]
+  jumping: ["excited", "happy", "fearful", "surprised"]
+  crying: ["sad", "fearful", "overwhelmed"]
+  laughing: ["happy", "joyful", "excited"]
+  shouting: ["angry", "excited", "fearful"]
+  dancing: ["happy", "excited", "joyful"]
+  celebrating: ["excited", "happy", "proud"]
+  thinking: ["thoughtful", "curious", "confused"]
+  hugging: ["happy", "sad", "relieved"]
+
+# Incompatible Combinations
+incompatible_pairs:
+  - ["running", "sitting"]
+  - ["jumping", "sitting"]
+  - ["dancing", "sitting"]
+  - ["climbing", "sitting"]
+  - ["sleeping", "running"]
+  - ["celebrating", "crying"]
+
+# Quality Tags
+quality_tags:
+  - "pixar style 3d animation"
+  - "high quality"
+  - "dynamic action"
+  - "professional animation"
+  - "clean render"
+  - "smooth motion"
+  - "detailed character"

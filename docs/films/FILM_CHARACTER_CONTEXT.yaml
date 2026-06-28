@@ -1,0 +1,684 @@
+# Detailed Film and Character Context for LLMProvider Caption Generation
+# This file provides comprehensive context for each film to ensure high-quality,
+# accurate captions for LoRA training.
+#
+# Based on Luca caption example:
+# "a character named Luca, young boy with green scaly skin and purple hair in sea
+#  monster form, wearing yellow t-shirt, curious expression, three-quarter view,
+#  3d animated character, pixar style, smooth shading, warm outdoor lighting,
+#  Italian coastal setting, full body shot"
+
+films:
+  luca:
+    title: "Luca"
+    year: 2021
+    studio: "Pixar Animation Studios"
+    director: "Enrico Casarosa"
+
+    setting:
+      location: "Italian Riviera, fictional town of Portorosso"
+      time_period: "Summer 1960s"
+      atmosphere: "Warm Mediterranean sunshine, coastal charm, vintage Italian seaside"
+
+    visual_style:
+      rendering: "Pixar's signature smooth PBR shading, subsurface scattering on skin"
+      color_palette: "Vibrant warm colors, saturated blues and teals for water, pastel buildings, golden sunlight"
+      lighting: "Warm natural outdoor lighting, strong Mediterranean sun, soft shadows"
+      texture_quality: "High-quality anti-aliased render, clean edges, smooth gradients"
+      artistic_direction: "Hand-painted feel, impressionistic water, stylized Italian architecture"
+
+    themes:
+      - "Coming of age and self-discovery"
+      - "Friendship and acceptance"
+      - "Overcoming fear of difference"
+      - "Summer adventure and freedom"
+
+    characters:
+      luca_paguro:
+        full_name: "Luca Paguro"
+        age: "13-14 years old"
+        species: "Sea monster (can transform to human form)"
+        personality: "Curious, cautious, eager to learn, kind-hearted, timid but brave when needed"
+
+        appearance_sea_monster:
+          skin: "Bright teal-green scaly skin with darker green patterns"
+          hair: "Purple-blue wavy hair with slight fins"
+          eyes: "Large expressive eyes, green-blue color"
+          features: "Small dorsal fin on back, webbed fingers, fish-like tail"
+          build: "Slim, agile, youthful proportions"
+
+        appearance_human:
+          skin: "Tan/olive Mediterranean skin tone"
+          hair: "Dark brown messy wavy hair"
+          eyes: "Large brown expressive eyes"
+          features: "Gentle facial features, youthful round face"
+          build: "Slim, average height for age"
+
+        typical_clothing:
+          - "Yellow short-sleeve t-shirt (most iconic)"
+          - "Brown/khaki shorts"
+          - "Often barefoot or simple sandals"
+          - "Sometimes wears red swimming trunks"
+
+        common_expressions:
+          - "Wide-eyed wonder and curiosity"
+          - "Nervous/worried smile"
+          - "Excited joy with open mouth"
+          - "Shy/embarrassed blush"
+          - "Determined brave face"
+
+        common_poses:
+          - "Leaning forward with curiosity"
+          - "Standing with hands behind back (shy)"
+          - "Running with arms out for balance"
+          - "Swimming/diving poses"
+          - "Sitting cross-legged"
+
+      alberto_scorfano:
+        full_name: "Alberto Scorfano"
+        age: "14-15 years old"
+        species: "Sea monster (can transform to human form)"
+        personality: "Confident, rebellious, street-smart, loyal friend, hides insecurity with bravado"
+
+        appearance_sea_monster:
+          skin: "Darker blue-green scaly skin with purple tones"
+          hair: "Dark purple messy spiky hair with fins"
+          eyes: "Green eyes, more angular than Luca's"
+          features: "Larger dorsal fin, more pronounced scales, sharp teeth"
+          build: "Slightly taller and more muscular than Luca"
+
+        appearance_human:
+          skin: "Tanned olive skin, darker than Luca"
+          hair: "Dark brown/black curly messy hair"
+          eyes: "Green-hazel eyes, confident gaze"
+          features: "More angular face, stronger jawline"
+          build: "Lean athletic build, slightly taller"
+
+        typical_clothing:
+          - "Often shirtless or tank top"
+          - "Worn brown shorts or pants"
+          - "Makeshift clothing from found items"
+          - "Red bandana or cloth accessories"
+          - "Barefoot or simple shoes"
+
+        common_expressions:
+          - "Confident wide grin"
+          - "Mischievous smirk"
+          - "Defensive/protective scowl"
+          - "Vulnerable sad eyes (rare)"
+          - "Enthusiastic excitement"
+
+        common_poses:
+          - "Arms crossed confidently"
+          - "Leaning back relaxed"
+          - "Jumping/diving dynamically"
+          - "Hands on hips bold stance"
+          - "Running with wild abandon"
+
+      giulia_marcovaldo:
+        full_name: "Giulia Marcovaldo"
+        age: "13-14 years old"
+        species: "Human"
+        personality: "Fiery, determined, tomboyish, competitive, passionate about learning"
+
+        appearance:
+          skin: "Fair with freckles"
+          hair: "Bright red-orange curly hair, often messy"
+          eyes: "Blue-green eyes, determined expression"
+          features: "Round face, prominent freckles, energetic features"
+          build: "Stocky, athletic, strong for her age"
+
+        typical_clothing:
+          - "Blue and white striped t-shirt"
+          - "Brown/tan overalls or shorts"
+          - "Red bandana in hair"
+          - "Simple sandals or boots"
+          - "Sometimes wears work gloves"
+
+        common_expressions:
+          - "Determined fierce look"
+          - "Wide excited grin"
+          - "Frustrated pout"
+          - "Competitive intense stare"
+          - "Friendly warm smile"
+
+      massimo_marcovaldo:
+        full_name: "Massimo Marcovaldo"
+        role: "Giulia's father, fisherman"
+        age: "40s"
+        personality: "Stoic, kind-hearted, protective, man of few words, skilled craftsman"
+
+        appearance:
+          skin: "Tanned weathered skin"
+          hair: "Dark graying hair and beard"
+          eyes: "Dark eyes, gentle despite stern look"
+          features: "Strong facial features, missing right arm (prosthetic)"
+          build: "Very tall, muscular, imposing figure"
+
+        typical_clothing:
+          - "White tank top undershirt"
+          - "Blue work pants/overalls"
+          - "Fisherman's boots"
+          - "Simple cap or bandana"
+
+    locations:
+      portorosso_town:
+        description: "Colorful Italian coastal town with stacked pastel buildings"
+        architecture: "Mediterranean style, narrow cobblestone streets, stone walls, terracotta roofs"
+        colors: "Warm yellows, oranges, pinks, light blues, weathered textures"
+        atmosphere: "Bustling market town, vintage 1960s Italian charm, seaside tourism"
+        landmarks: "Town plaza, Giulia's house, harbor, race course"
+
+      underwater_sea:
+        description: "Vibrant underwater world where sea monsters live"
+        style: "Impressionistic, hand-painted feel, glowing bioluminescence"
+        colors: "Deep blues, teals, purples, glowing greens and yellows"
+        atmosphere: "Mysterious, magical, peaceful yet isolated"
+        features: "Coral formations, sea grass meadows, rocky caves"
+
+      beaches_coastline:
+        description: "Rocky Mediterranean coastline and sandy beaches"
+        features: "Rocky cliffs, tide pools, sun-bleached stones, clear water"
+        colors: "Turquoise water, golden sand, gray-brown rocks"
+        atmosphere: "Sunny, warm, adventurous, secretive meeting spots"
+
+  # ===================================================================
+
+  onward:
+    title: "Onward"
+    year: 2020
+    studio: "Pixar Animation Studios"
+    director: "Dan Scanlon"
+
+    setting:
+      location: "Suburban fantasy world (New Mushroomton)"
+      time_period: "Contemporary but with magic"
+      atmosphere: "Modern suburban life meets medieval fantasy aesthetics"
+
+    visual_style:
+      rendering: "Pixar PBR with fantasy elements, glowing magic effects"
+      color_palette: "Muted suburban tones with vibrant magic purple/blue, earth tones"
+      lighting: "Naturalistic suburban lighting, magical glow effects, sunset/golden hour"
+      texture_quality: "High-quality fur rendering (Ian and Barley), magical particle effects"
+      artistic_direction: "Grounded realism meets whimsical fantasy, Dungeons & Dragons inspired"
+
+    themes:
+      - "Brotherhood and family bonds"
+      - "Self-confidence and believing in yourself"
+      - "Letting go of the past"
+      - "Finding magic in everyday life"
+
+    characters:
+      ian_lightfoot:
+        full_name: "Ian Lightfoot"
+        age: "16 years old"
+        species: "Elf"
+        personality: "Shy, anxious, lacks confidence, earnest, rule-following, wants to connect with deceased father"
+
+        appearance:
+          skin: "Light blue-purple skin"
+          hair: "Dark blue curly hair, somewhat messy"
+          ears: "Long pointed elf ears"
+          eyes: "Large blue eyes, nervous expression"
+          features: "Slim build, awkward teenage proportions, braces"
+          build: "Thin, gangly, average height"
+
+        typical_clothing:
+          - "Purple and white striped polo shirt"
+          - "Brown khaki pants"
+          - "Sneakers"
+          - "Backpack (Quest of Yore themed)"
+
+        common_expressions:
+          - "Nervous/worried wide-eyed look"
+          - "Awkward smile"
+          - "Concentrated determination when casting spells"
+          - "Surprised/scared reaction"
+          - "Gradual confidence growth"
+
+        magic_abilities:
+          staff: "Father's wizard staff (wooden, gemstone at top)"
+          spells: "Growth spell, levitation spell, arcane lightning, various wizard magic"
+          visual_effects: "Purple-blue magical energy, glowing runes"
+
+      barley_lightfoot:
+        full_name: "Barley Lightfoot"
+        age: "19-20 years old"
+        species: "Elf"
+        personality: "Enthusiastic, loud, history buff, D&D obsessed, protective big brother, somewhat immature"
+
+        appearance:
+          skin: "Light blue-purple skin, slightly darker than Ian"
+          hair: "Long messy orange-red hair, unkempt beard"
+          ears: "Long pointed elf ears"
+          eyes: "Blue eyes, energetic expression"
+          features: "Stockier build, broader shoulders"
+          build: "Heavyset, muscular arms, barrel-chested"
+
+        typical_clothing:
+          - "Black t-shirt with fantasy game graphics"
+          - "Brown/tan cargo vest"
+          - "Worn jeans or cargo pants"
+          - "Boots"
+          - "Various fantasy/medieval accessories"
+
+        common_expressions:
+          - "Enthusiastic wide grin"
+          - "Passionate explaining gesture"
+          - "Protective fierce look"
+          - "Goofball silly face"
+          - "Emotional teary-eyed"
+
+        items:
+          van: "Guinevere - painted fantasy van with wizard mural"
+          gear: "Quest of Yore board game items, maps, medieval props"
+
+    locations:
+      new_mushroomton:
+        description: "Modern suburb built in fantasy world aesthetics"
+        architecture: "1970s-80s American suburbs but with mushroom houses, medieval touches"
+        colors: "Muted earth tones, browns, greens, magical purple accents"
+        atmosphere: "Mundane modern life with forgotten fantasy past"
+
+      ancient_ruins:
+        description: "Forgotten magical monuments and temples"
+        style: "Medieval fantasy, stone architecture, overgrown with nature"
+        colors: "Gray stone, moss greens, magical purple/blue glows"
+        atmosphere: "Mysterious, ancient, dangerous, awe-inspiring"
+
+  # ===================================================================
+
+  turning_red:
+    title: "Turning Red"
+    year: 2022
+    studio: "Pixar Animation Studios"
+    director: "Domee Shi"
+
+    setting:
+      location: "Toronto, Canada (Chinatown area)"
+      time_period: "2002"
+      atmosphere: "Early 2000s nostalgia, boy band era, Asian-Canadian family life"
+
+    visual_style:
+      rendering: "Pixar PBR with anime influences, exaggerated expressions"
+      color_palette: "Vibrant warm reds and pinks (panda), cool urban blues, bright Y2K colors"
+      lighting: "Natural urban lighting, neon signs at night, warm indoor family scenes"
+      texture_quality: "Fluffy red panda fur rendering, anime-inspired style, clean modern aesthetic"
+      artistic_direction: "Anime and manga influences, energetic visual style, Y2K aesthetic"
+
+    themes:
+      - "Puberty and bodily changes"
+      - "Mother-daughter relationships"
+      - "Cultural identity and generational expectations"
+      - "Embracing your true self"
+      - "Friendship and loyalty"
+
+    characters:
+      meilin_mei_lee:
+        full_name: "Meilin 'Mei' Lee"
+        age: "13 years old"
+        ethnicity: "Chinese-Canadian"
+        personality: "Overachiever, people-pleaser, secretly rebellious, energetic, loyal friend"
+
+        appearance_human:
+          skin: "Light skin with rosy cheeks"
+          hair: "Black hair, styled in short bob with red scrunchie"
+          eyes: "Large brown eyes, anime-style expressiveness"
+          features: "Round face, prominent front teeth (slight gap), red round glasses"
+          build: "Average height, slim, energetic body language"
+
+        appearance_red_panda:
+          fur: "Bright red-orange fluffy fur with white markings"
+          size: "Giant red panda (8 feet tall)"
+          face: "Red panda features with Mei's expressions"
+          tail: "Large fluffy red and white ringed tail"
+          ears: "Round fluffy ears"
+          paws: "Large fluffy paws with claws"
+
+        typical_clothing:
+          - "Red polo shirt with maple leaf"
+          - "Teal/turquoise vest or cardigan"
+          - "Blue or pink jeans"
+          - "Sneakers (often pink or colorful)"
+          - "Red scrunchie in hair"
+          - "Sometimes wears 4*Town merchandise"
+
+        common_expressions:
+          - "Enthusiastic wide smile with sparkly eyes"
+          - "Panicked stressed-out face"
+          - "Embarrassed blushing"
+          - "Anime-style exaggerated shock"
+          - "Determined confident look"
+          - "Guilty/nervous shifty eyes"
+
+        panda_emotions:
+          - "Transformation triggered by strong emotions"
+          - "Red glow before transformation"
+          - "Larger and fluffier when more emotional"
+          - "Can control transformation with practice"
+
+      ming_lee:
+        full_name: "Ming Lee"
+        role: "Mei's mother"
+        age: "40s"
+        personality: "Overprotective, traditional, perfectionist, deeply loving but controlling"
+
+        appearance:
+          skin: "Light skin, well-maintained"
+          hair: "Black hair in neat bob, very similar to Mei"
+          eyes: "Brown eyes, sharp when strict, soft when loving"
+          features: "Elegant features, always composed"
+          build: "Tall, slim, graceful posture"
+          glasses: "Round glasses similar to Mei's"
+
+        typical_clothing:
+          - "Traditional-meets-modern Chinese clothing"
+          - "Teal and red color combinations"
+          - "Neat cardigans or blouses"
+          - "Practical pants or skirts"
+          - "Always pristine and proper"
+
+        giant_panda_form:
+          description: "MASSIVE red panda (kaiju-sized)"
+          appearance: "Similar red panda features but enormous, more fierce"
+          emotional_state: "Triggered by protective rage and anxiety"
+
+      mei_friends:
+        miriam:
+          personality: "Chill, supportive, tomboyish best friend"
+          appearance: "Tall, lanky, dark skin, dreadlocks, baggy clothes"
+
+        priya:
+          personality: "Deadpan, goth, secretly passionate"
+          appearance: "Medium height, South Asian, dark hair, goth style"
+
+        abby:
+          personality: "Tiny, fierce, emotional, aggressive supporter"
+          appearance: "Very short, Korean, black hair in buns, pink clothes"
+
+    locations:
+      toronto_chinatown:
+        description: "Vibrant Chinese-Canadian neighborhood"
+        architecture: "Urban Toronto with Chinese signs and decorations"
+        colors: "Red and gold accents, urban grays, colorful storefronts"
+        atmosphere: "Bustling multicultural community, mix of traditional and modern"
+
+      lee_family_temple:
+        description: "Traditional Chinese temple maintained by family"
+        style: "Red and gold traditional architecture, ornate details"
+        atmosphere: "Sacred, traditional, family heritage"
+
+      school_and_home:
+        description: "2002 middle school and modern Toronto home"
+        style: "Y2K aesthetic, early 2000s technology and fashion"
+        colors: "Bright classroom colors, homey warm interior"
+
+  # ===================================================================
+
+  coco:
+    title: "Coco"
+    year: 2017
+    studio: "Pixar Animation Studios"
+    director: "Lee Unkrich"
+
+    setting:
+      location: "Santa Cecilia, Mexico"
+      time_period: "Present day during Día de los Muertos"
+      atmosphere: "Vibrant Mexican culture, music-filled, tradition-rich"
+
+    visual_style:
+      rendering: "Pixar's rich color rendering, detailed skeletal animation, papel picado"
+      color_palette: "Extremely vibrant - marigold oranges, deep purples, hot pinks, gold"
+      lighting: "Warm Mexican sunlight, glowing spirit world, candlelight, magical marigold glow"
+      texture_quality: "Intricate details on alebrijes, embroidered clothing, aged guitars"
+      artistic_direction: "Mexican folk art inspired, papel picado decorations, Land of Dead glows"
+
+    themes:
+      - "Family and remembrance"
+      - "Following your dreams vs family expectations"
+      - "Death as part of life's cycle"
+      - "Mexican cultural pride and tradition"
+      - "Music as connection across generations"
+
+    characters:
+      miguel_rivera:
+        full_name: "Miguel Rivera"
+        age: "12 years old"
+        ethnicity: "Mexican"
+        personality: "Passionate about music, determined, kind-hearted, rebellious against family ban"
+
+        appearance:
+          skin: "Tan brown skin"
+          hair: "Black hair, slightly messy"
+          eyes: "Large brown expressive eyes"
+          features: "Youthful round face, prominent ears, gap in front teeth"
+          build: "Thin, small for age, energetic"
+
+        typical_clothing:
+          - "White long-sleeve shirt with red trim"
+          - "Red-brown vest"
+          - "Brown pants"
+          - "Brown sandals or huaraches"
+          - "Red cloth around waist"
+
+        common_expressions:
+          - "Determined passionate look when playing guitar"
+          - "Wide-eyed wonder in Land of the Dead"
+          - "Guilty/pleading expression"
+          - "Excited joy when performing"
+          - "Tearful emotional moments"
+
+        items:
+          guitar: "Stolen/borrowed Ernesto de la Cruz's white and gold guitar"
+
+      héctor:
+        full_name: "Héctor Rivera"
+        age: "Appears 20s (skeleton in Land of Dead)"
+        personality: "Charming trickster, secretly loving father, funny, street-smart"
+
+        appearance_skeleton:
+          bones: "Weathered looking skeleton, patches of wear"
+          clothing: "Tattered burgundy jacket, patched pants, straw hat"
+          features: "Missing some teeth, very expressive skull, gold tooth"
+          accessories: "Worn hat, scarf, musician's attire"
+
+        common_expressions:
+          - "Charming con-man grin"
+          - "Emotional vulnerability (eyes glow with tears)"
+          - "Playful mischievous look"
+          - "Desperate pleading"
+          - "Fatherly protective expression"
+
+      ernesto_de_la_cruz:
+        role: "Famous deceased musician (antagonist reveal)"
+        appearance: "Handsome skeleton in white mariachi suit, gold trim"
+        personality: "Charismatic, vain, secretly ruthless and selfish"
+
+    locations:
+      santa_cecilia:
+        description: "Small Mexican town with plaza and modest homes"
+        architecture: "Traditional Mexican buildings, cobblestone streets, family shoe shop"
+        colors: "Earth tones, colorful papel picado, warm afternoon light"
+        atmosphere: "Close-knit community, Día de los Muertos preparations"
+
+      land_of_the_dead:
+        description: "Spectacular glowing spirit world"
+        architecture: "Towering vertical city of glowing buildings, marigold bridges"
+        colors: "Glowing golds, purples, blues, pinks - extremely vibrant"
+        atmosphere: "Magical, bustling, joyous afterlife, Mexican tradition embodied"
+        features: "Marigold petal bridges, spirit guide alebrijes, grand plaza"
+
+  # ===================================================================
+
+  elio:
+    title: "Elio"
+    year: 2025
+    studio: "Pixar Animation Studios"
+    director: "Madeline Sharafian"
+
+    setting:
+      location: "Earth and alien planets/spacecraft"
+      time_period: "Near future"
+      atmosphere: "Space adventure comedy, fish-out-of-water story"
+
+    visual_style:
+      rendering: "Pixar PBR with sci-fi elements, alien creature design, space effects"
+      color_palette: "Cool space blues/purples, warm earth tones, vibrant alien colors"
+      lighting: "Dramatic space lighting, starfield backgrounds, alien bioluminescence"
+      texture_quality: "Detailed alien textures, spacecraft materials, zero-gravity effects"
+      artistic_direction: "Retro-futuristic meets modern sci-fi, imaginative alien designs"
+
+    themes:
+      - "Impostor syndrome and self-worth"
+      - "Accidental heroism"
+      - "Intergalactic diplomacy and diversity"
+      - "Finding your place in the universe"
+
+    characters:
+      elio_soto:
+        full_name: "Elio Soto"
+        age: "Teen (exact age TBD)"
+        ethnicity: "Latino/Hispanic"
+        personality: "Imaginative, creative, feels like an outsider, kind-hearted underdog"
+
+        appearance:
+          skin: "Medium brown skin"
+          hair: "Dark curly hair, somewhat wild"
+          eyes: "Large expressive brown eyes"
+          features: "Youthful features, energetic expressions"
+          build: "Average height, slim build"
+
+        typical_clothing:
+          - "Casual Earth clothing (hoodie, t-shirt, jeans)"
+          - "Later: improvised space attire"
+          - "Colorful, relatable modern kid aesthetic"
+
+        common_situations:
+          - "Mistaken for Earth's intergalactic ambassador"
+          - "Fish-out-of-water in alien environments"
+          - "Using imagination and creativity to solve problems"
+          - "Forming unlikely friendships with aliens"
+
+        personality_traits:
+          - "Overactive imagination"
+          - "Feels like he doesn't fit in on Earth"
+          - "Resourceful and clever despite inexperience"
+          - "Genuinely kind and empathetic"
+
+    locations:
+      earth_home:
+        description: "Contemporary Earth setting, likely suburban/urban"
+        style: "Modern realistic Earth environments"
+        atmosphere: "Familiar, grounded, where Elio feels out of place"
+
+      alien_spacecraft:
+        description: "Advanced alien vessel with diverse alien species"
+        style: "Imaginative sci-fi design, colorful and varied"
+        atmosphere: "Overwhelming, exciting, diplomatic hub"
+
+      alien_planets:
+        description: "Various exotic alien worlds"
+        style: "Creative Pixar alien designs, bioluminescent, fantastical"
+        colors: "Vibrant and varied depending on planet"
+
+    # Note: Film not yet released as of training data, details may be incomplete
+    # Update this section after film release with accurate character and plot details
+
+# ===================================================================
+# Caption Generation Guidelines for LLMProvider API
+# ===================================================================
+
+caption_guidelines:
+  general_principles:
+    - "Start with trigger word/phrase (character name or location)"
+    - "Be specific and detailed about visual elements"
+    - "Include 3D/Pixar style markers"
+    - "Mention lighting and atmosphere"
+    - "Keep 40-77 tokens (SD training optimal length)"
+    - "Use comma-separated phrases, no unnecessary words"
+    - "Focus on what's VISIBLE in the image, not story context"
+
+  character_captions:
+    structure:
+      - "Trigger: 'a character named [NAME]'"
+      - "Physical description: age, species, distinctive features"
+      - "Clothing: specific items and colors"
+      - "Expression: emotional state visible in face"
+      - "Pose: body position and gesture"
+      - "View angle: close-up, portrait, three-quarter, full body"
+      - "Style markers: '3d animated character, pixar style, smooth shading'"
+      - "Lighting: quality and direction"
+      - "Background: brief context if relevant"
+
+    example_quality:
+      luca_human: "a character named Luca, young teenage boy, tan skin, brown messy hair, large brown eyes, wearing yellow short-sleeve t-shirt and brown shorts, curious wide-eyed expression, standing pose with hands behind back, three-quarter front view, 3d animated character, pixar style, smooth PBR shading, warm outdoor Mediterranean lighting, Italian coastal town background, full body shot"
+
+      luca_sea_monster: "a character named Luca, young sea monster boy, bright teal-green scaly skin with purple hair, large expressive green eyes, small dorsal fin, slim build, happy swimming pose with arms extended, front view, 3d animated character, pixar style, smooth shading with subsurface scattering on scales, underwater lighting with blue-green tones, full body shot"
+
+      mei_human: "a character named Mei Lee, teenage girl, light skin with rosy cheeks, black hair in bob with red scrunchie, round red glasses, wearing red polo shirt with maple leaf, excited expression with wide smile and sparkly anime-style eyes, energetic standing pose with hands raised, front three-quarter view, 3d animated character, pixar style with anime influences, bright colorful lighting, urban background, full body shot"
+
+      mei_panda: "a character named Mei Lee as red panda, giant fluffy red-orange fur with white markings, round panda face with large expressive eyes, huge fluffy tail with rings, standing on hind legs, embarrassed expression covering face with paws, front view, 3d animated character, pixar style, detailed fur rendering, warm indoor lighting, full body shot"
+
+  background_captions:
+    structure:
+      - "Trigger: '[LOCATION NAME]'"
+      - "Type: establishing shot, wide view, environment"
+      - "Architecture/landscape: specific visual elements"
+      - "Colors: dominant color palette"
+      - "Atmosphere: weather, time of day, mood"
+      - "Style: '3d animated environment, pixar style'"
+      - "Lighting: quality and color temperature"
+      - "Details: distinctive features or landmarks"
+
+    example_quality:
+      portorosso: "Portorosso town square, Italian coastal village with stacked colorful pastel buildings in yellows, oranges, and pinks, narrow cobblestone streets winding upward, Mediterranean architecture with terracotta roofs and stone walls, vintage 1960s Italian seaside charm, bright afternoon sunlight, clear blue sky, distant ocean view, 3d animated environment, pixar style, warm saturated colors, vibrant summer atmosphere, wide establishing shot, cinematic composition"
+
+      land_of_dead: "Land of the Dead, towering vertical city of glowing buildings stacked impossibly high, marigold petal bridges connecting structures, vibrant glowing colors in purple, gold, and pink, papel picado decorations floating in air, magical bioluminescent glow everywhere, nighttime scene, 3d animated environment, pixar style, extremely saturated colors, whimsical fantastical atmosphere, wide establishing shot, Mexican folk art inspired"
+
+  pose_captions:
+    focus: "Emphasize action, body positioning, and movement"
+    include:
+      - "Character name + action verb"
+      - "Specific pose description (leg position, arm gestures)"
+      - "Dynamic or static nature"
+      - "View angle relevant to pose"
+      - "Motion lines or blur if applicable"
+      - "Contextual setting if relevant to action"
+
+  expression_captions:
+    focus: "Emphasize facial features and emotion"
+    include:
+      - "Character name + emotion"
+      - "Specific facial features (eyes, mouth, eyebrows)"
+      - "Intensity of expression"
+      - "Close-up or portrait framing"
+      - "Emotional context"
+
+  technical_keywords:
+    framing:
+      - "extreme close-up, close-up, medium close-up"
+      - "portrait, headshot, bust shot"
+      - "medium shot, waist-up, three-quarter"
+      - "full body, wide shot, establishing shot"
+
+    angles:
+      - "front view, front three-quarter view"
+      - "side view, profile, three-quarter profile"
+      - "back view, over shoulder"
+      - "high angle, low angle, eye level"
+      - "dutch angle, dynamic angle"
+
+    lighting:
+      - "natural outdoor lighting, sunlight, golden hour"
+      - "indoor lighting, warm interior light"
+      - "dramatic lighting, rim lighting, backlighting"
+      - "soft diffused light, hard shadows"
+      - "magical glow, bioluminescence, neon"
+
+    quality:
+      - "3d animated character/environment"
+      - "pixar style, pixar animation"
+      - "smooth PBR shading, subsurface scattering"
+      - "high quality render, anti-aliased"
+      - "detailed textures, clean composition"
+      - "cinematic lighting, professional animation quality"

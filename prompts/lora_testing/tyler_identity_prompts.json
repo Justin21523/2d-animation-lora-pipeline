@@ -1,0 +1,20 @@
+{
+  "character": "Tyler",
+  "film": "Turning Red",
+  "trigger_word": "tyler",
+  "test_prompts": [
+    "tyler, a 3d animated character, pixar style, smooth shading",
+    "tyler smiling, a 3d animated character, pixar style",
+    "tyler portrait, 3d render, pixar animation style",
+    "close-up of tyler, detailed 3d character, pixar quality",
+    "tyler standing, full body, 3d animated character",
+    "tyler three-quarter view, pixar style, studio lighting"
+  ],
+  "negative_prompt": "2d, flat, sketch, low quality, blurry, deformed",
+  "parameters": {
+    "steps": 30,
+    "cfg_scale": 7.5,
+    "seed": 42,
+    "num_variations": 4
+  }
+}
