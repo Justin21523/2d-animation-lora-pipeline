@@ -1,0 +1,147 @@
+{
+  "project": "2D Animation LoRA Pipeline",
+  "generated_at": "2026-06-28T13:03:07.617922+00:00",
+  "mode": "cpu_stub_demo",
+  "summary": {
+    "stages_total": 7,
+    "stages_complete": 7,
+    "metadata_rows": 6924,
+    "image_artifacts": 339,
+    "demo_ready": true
+  },
+  "product_results": {
+    "headline": "A public, mock-safe demo layer for a GPU-heavy character LoRA pipeline.",
+    "assets": {
+      "character_sheet": "assets/demo/character-sheet.png",
+      "before_after": "assets/demo/pipeline-before-after.png",
+      "training_metrics": "assets/demo/training-metrics.png",
+      "evaluation_matrix": "assets/demo/evaluation-matrix.png",
+      "animation_strip": "assets/demo/animation-strip.png"
+    },
+    "metrics": [
+      {
+        "label": "Identity retention",
+        "value": "91%",
+        "trend": "HDBSCAN track merge demo"
+      },
+      {
+        "label": "Mask acceptance",
+        "value": "88%",
+        "trend": "ToonOut-style clean cutouts"
+      },
+      {
+        "label": "Caption coverage",
+        "value": "100%",
+        "trend": "stub VLM captions"
+      },
+      {
+        "label": "CPU demo runtime",
+        "value": "< 10s",
+        "trend": "no GPU required"
+      }
+    ],
+    "deliverables": [
+      "Static product demo site",
+      "Synthetic 2D dataset gallery",
+      "Pipeline stage dashboard",
+      "Screenshot and WebM walkthrough package",
+      "GitHub Pages and Docker/Nginx deployment path"
+    ],
+    "media": {
+      "screenshots": [
+        "assets/screenshots/01-demo-home-desktop.png",
+        "assets/screenshots/02-demo-results-desktop.png",
+        "assets/screenshots/03-demo-home-mobile.png"
+      ],
+      "video": "assets/video/demo-walkthrough.webm",
+      "poster": "assets/screenshots/01-demo-home-desktop.png"
+    }
+  },
+  "scenarios": [
+    {
+      "id": "review",
+      "title": "Fast interview review",
+      "description": "Open the public site, scan stage readiness, play the walkthrough, then inspect architecture diagrams."
+    },
+    {
+      "id": "cpu-safe",
+      "title": "CPU-safe smoke path",
+      "description": "Regenerate manifest and public assets without private videos, model weights, API keys, or CUDA."
+    },
+    {
+      "id": "full-mode",
+      "title": "Full GPU extension",
+      "description": "Use the same stage model with real local video/model warehouses for YOLO, ToonOut, DWpose, and LoRA training."
+    }
+  ],
+  "stages": [
+    {
+      "order": 1,
+      "id": "frame_extraction",
+      "label": "Frame extraction",
+      "description": "Scene-aware frame sampling",
+      "status": "complete",
+      "rows": 1800,
+      "images": 128
+    },
+    {
+      "order": 2,
+      "id": "yolo_tracking",
+      "label": "YOLO + ByteTrack",
+      "description": "Multi-character detection and track IDs",
+      "status": "complete",
+      "rows": 1460,
+      "images": 74
+    },
+    {
+      "order": 3,
+      "id": "toonout_segmentation",
+      "label": "ToonOut segmentation",
+      "description": "Per-track foreground/background cutouts",
+      "status": "complete",
+      "rows": 1320,
+      "images": 74
+    },
+    {
+      "order": 4,
+      "id": "dwpose_extraction",
+      "label": "DWpose extraction",
+      "description": "Pose conditioning for ControlNet",
+      "status": "complete",
+      "rows": 980,
+      "images": 48
+    },
+    {
+      "order": 5,
+      "id": "identity_clustering",
+      "label": "Identity clustering",
+      "description": "HDBSCAN merges track fragments by face embeddings",
+      "status": "complete",
+      "rows": 720,
+      "images": 11
+    },
+    {
+      "order": 6,
+      "id": "dataset_building",
+      "label": "LoRA dataset",
+      "description": "Captioned, filtered, character-specific training rows",
+      "status": "complete",
+      "rows": 640,
+      "images": 3
+    },
+    {
+      "order": 7,
+      "id": "lora_training",
+      "label": "LoRA training",
+      "description": "kohya/diffusers training configs and checkpoint metrics",
+      "status": "complete",
+      "rows": 4,
+      "images": 1
+    }
+  ],
+  "commands": {
+    "generate_manifest": "python scripts/demo/run_demo_pipeline.py --skip-pipeline",
+    "serve_site": "python -m http.server 8080 -d portfolio-web",
+    "smoke_tests": "python -m pytest tests/demo tests/test_end_to_end_pipeline.py -q"
+  }
+}
