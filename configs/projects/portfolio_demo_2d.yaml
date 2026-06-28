@@ -1,0 +1,79 @@
+project:
+  name: "portfolio_demo_2d"
+  studio: "Synthetic public demo"
+  year: 2026
+  style: "2d_animation"
+
+paths:
+  base_dir: "outputs/portfolio_demo_2d"
+  input_video: "outputs/portfolio_demo_2d/input/mock_video.mp4"
+  frames: "outputs/portfolio_demo_2d/frames"
+  detections: "outputs/portfolio_demo_2d/detections"
+  segmented: "outputs/portfolio_demo_2d/segmented"
+  poses: "outputs/portfolio_demo_2d/poses"
+  clustered: "outputs/portfolio_demo_2d/clustered"
+  training_data: "outputs/portfolio_demo_2d/training_data"
+  lora_output: "outputs/portfolio_demo_2d/lora"
+
+frame_extraction:
+  mode: "scene"
+  use_stub: true
+  stub_frame_count: 5
+
+detection:
+  backend: "stub"
+  use_stub: true
+  max_dets_per_frame: 3
+
+segmentation:
+  backend: "stub"
+  use_stub: true
+  alpha_threshold: 0.25
+
+pose:
+  backend: "stub"
+  use_stub: true
+
+clustering:
+  backend: "stub"
+  min_cluster_size: 3
+  device: "cpu"
+
+dataset:
+  use_stub: true
+  caption_prefix: "a clean 2d animated character"
+
+training:
+  use_stub: true
+  base_model: "mock-sdxl"
+  epochs: 1
+
+pipeline_stages:
+  - name: "frame_extraction"
+    enabled: true
+    description: "Extract mock-safe demo frames"
+  - name: "yolo_tracking"
+    enabled: true
+    description: "Generate stub detections and track IDs"
+    dependencies: ["frame_extraction"]
+  - name: "toonout_segmentation"
+    enabled: true
+    description: "Generate stub foreground/background masks"
+    dependencies: ["yolo_tracking"]
+  - name: "dwpose_extraction"
+    enabled: true
+    optional: true
+    description: "Generate stub pose conditioning previews"
+    dependencies: ["yolo_tracking"]
+  - name: "identity_clustering"
+    enabled: true
+    description: "Cluster synthetic tracks by identity"
+    dependencies: ["toonout_segmentation"]
+  - name: "dataset_building"
+    enabled: true
+    description: "Build mock LoRA dataset contract"
+    dependencies: ["identity_clustering"]
+  - name: "lora_training"
+    enabled: true
+    description: "Emit mock training checkpoint metrics"
+    dependencies: ["dataset_building"]

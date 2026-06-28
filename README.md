@@ -1,559 +1,336 @@
 # 2D Animation LoRA Pipeline
 
-> **High-quality LoRA training pipeline for Western 2D animation characters**
->
-> Optimized for TV shows like The Simpsons, Family Guy, Rick and Morty, etc.
+Portfolio-ready data engineering and training pipeline for 2D animation character LoRA datasets. The project turns animation footage into staged artifacts: frames, multi-character detections, track-aware foreground masks, identity clusters, pose conditioning records, captioned LoRA datasets, training configs, checkpoint metrics, and a public mock-safe demo layer that can be reviewed without private media or model weights.
 
-![Python](https://img.shields.io/badge/python-3.10+-blue.svg)
-![License](https://img.shields.io/badge/license-MIT-green.svg)
-![Status](https://img.shields.io/badge/status-production--ready-brightgreen.svg)
+The repository is intentionally file-driven. There is no production database or hosted inference API. YAML/TOML configs, parquet/JSON metadata, image artifacts, and static manifests are the contracts between stages.
 
----
+## Demo Links
 
-## 🎯 Overview
+| Asset | URL / Path | Purpose |
+| --- | --- | --- |
+| Public demo site | https://justin21523.github.io/2d-animation-lora-pipeline/ | Static product-style demo for interview review |
+| Portfolio case study | https://justin21523.github.io/zh-TW/projects/2d-animation-lora-pipeline/ | Main portfolio page with screenshots, recording, and links |
+| Local static site | `portfolio-web/index.html` | Source for the published demo |
+| Demo manifest | `portfolio-web/demo-data/manifest.json` | Frontend data contract for stages, scenarios, metrics, and media |
+| Demo screenshots | `portfolio-web/assets/screenshots/` | Review-ready screenshot assets |
+| Demo video | `portfolio-web/assets/video/demo-walkthrough.webm` | Short walkthrough recording |
 
-A comprehensive, production-ready pipeline for training character LoRA adapters from 2D animated content. Built on proven infrastructure from 3D animation pipelines, adapted for the unique characteristics of Western 2D animation.
-
-**Key Features:**
-- 🎬 **End-to-end automation**: Video → frames → segmentation → clustering → training
-- 👥 **Multi-character support**: Handles 2+ characters per frame with identity tracking
-- 🔧 **Flexible configuration**: Hierarchical OmegaConf system with 2D/3D parameter conversion
-- 📊 **Stage-based architecture**: Checkpoint/resume support, progress tracking
-- 🎨 **2D-optimized**: Hard-edge segmentation, cartoon face detection, style variation handling
-- 🚀 **Production-ready**: Stub mode for rapid prototyping, robust error handling
-
----
-
-## 🏗️ Architecture
-
-### Pipeline Flow
-
-```
-Video Input
-    ↓
-┌─────────────────────────────────────────────────────────────┐
-│ Stage 1: Frame Extraction                                   │
-│ • Scene-based detection or interval sampling               │
-│ • High-quality frame output                                │
-└─────────────────────────────────────────────────────────────┘
-    ↓
-┌─────────────────────────────────────────────────────────────┐
-│ Stage 2: Multi-Character Extraction (Integrated)            │
-│                                                              │
-│  [2.1] YOLO Detection + Multi-Object Tracking               │
-│      → Detect all characters, assign track IDs             │
-│                                                              │
-│  [2.2] Per-Track ToonOut Segmentation                       │
-│      → Segment each character track independently          │
-│                                                              │
-│  [2.3] Face-Based Identity Clustering                       │
-│      → Merge tracks of same character (HDBSCAN)            │
-└─────────────────────────────────────────────────────────────┘
-    ↓
-┌─────────────────────────────────────────────────────────────┐
-│ Stage 3: DWpose Extraction (Optional)                       │
-│ • Extract pose keypoints for ControlNet conditioning       │
-└─────────────────────────────────────────────────────────────┘
-    ↓
-┌─────────────────────────────────────────────────────────────┐
-│ Stage 4: Dataset Building                                   │
-│ • Organize character-specific training datasets            │
-│ • Generate VLM-assisted captions                           │
-│ • Quality filtering and augmentation                       │
-└─────────────────────────────────────────────────────────────┘
-    ↓
-┌─────────────────────────────────────────────────────────────┐
-│ Stage 5: LoRA Training                                      │
-│ • Train character identity LoRA adapters                   │
-│ • Automatic checkpoint evaluation                          │
-└─────────────────────────────────────────────────────────────┘
-    ↓
-Trained LoRA Models
-```
-
-### Directory Structure
-
-```
-2d-animation-lora-pipeline/
-├── anime_pipeline/              # Main package
-│   ├── config/                  # Configuration system (OmegaConf)
-│   │   ├── omega_loader.py      # Hierarchical config loader
-│   │   └── param_converter.py   # 2D/3D parameter conversion
-│   ├── core/                    # Core infrastructure
-│   │   ├── orchestrator.py      # Pipeline coordinator
-│   │   ├── stage_manager.py     # Stage dependency manager
-│   │   ├── resource_monitor.py  # GPU/CPU monitoring
-│   │   ├── stub_framework.py    # Unified stub mode (Phase 4)
-│   │   └── metadata_io.py       # Unified metadata I/O (Phase 4)
-│   ├── frames/                  # Frame extraction
-│   ├── detection/               # YOLO + tracking
-│   │   └── yolo_detector.py     # Multi-object tracking
-│   ├── segmentation/            # Foreground/background segmentation
-│   │   └── toonout_wrapper.py   # ToonOut per-track segmentation
-│   ├── clustering/              # Character identity clustering
-│   │   └── identity_clustering.py  # Face-based clustering
-│   ├── pose/                    # Pose estimation (DWpose)
-│   ├── datasets/                # Dataset building
-│   └── training/                # LoRA training
-├── configs/                     # Configuration files
-│   ├── global/                  # Pipeline-wide settings
-│   │   ├── pipeline_stages.yaml # Stage definitions
-│   │   └── param_mapping.yaml   # 2D/3D parameter mappings
-│   ├── stages/                  # Stage-specific configs
-│   ├── characters/              # Per-character configs
-│   └── projects/                # Per-project configs
-├── scripts/                     # Executable scripts
-│   └── run_pipeline.py          # Main CLI entry point
-└── docs/                        # Documentation
-```
-
----
-
-## 🚀 Quick Start
-
-### Installation
+## Quick Reviewer Path
 
 ```bash
-# Clone repository
-git clone https://github.com/yourusername/2d-animation-lora-pipeline.git
-cd 2d-animation-lora-pipeline
+pip install -r requirements/core.txt -r requirements/dev.txt
+python scripts/demo/run_demo_pipeline.py --skip-pipeline
+python -m pytest tests/demo tests/test_end_to_end_pipeline.py -q
+python -m http.server 8080 -d portfolio-web
+```
 
-# Create conda environment
-conda create -n ai_env python=3.10
-conda activate ai_env
+Open `http://localhost:8080`.
 
-# Install dependencies
+For the focused CPU-safe smoke suite:
+
+```bash
+./tests/run_tests.sh
+```
+
+## What This Project Demonstrates
+
+| Area | What is shown | Why it matters in an interview |
+| --- | --- | --- |
+| ML data engineering | Stage outputs are tracked as files and metadata | Shows reproducible data contracts, not only model prompting |
+| Computer vision pipeline | YOLO tracking, ToonOut-style masks, identity clustering, pose data | Shows multi-stage CV orchestration for difficult 2D animation footage |
+| Training readiness | Captioned LoRA datasets, kohya/diffusers configs, checkpoint metrics | Shows awareness of real training constraints and evaluation loops |
+| Demo safety | CPU-safe synthetic assets and stub workflows | Lets reviewers run it without private media, GPUs, secrets, or model downloads |
+| Product presentation | Static site, screenshots, video, portfolio integration | Makes the work understandable in a few minutes |
+| Deployment | GitHub Pages and Docker/Nginx static hosting | Shows practical release packaging |
+
+## Product Demo Flow
+
+```mermaid
+flowchart LR
+    A[Reviewer opens portfolio card] --> B[Project detail page]
+    B --> C[Demo video]
+    B --> D[Screenshot gallery]
+    B --> E[GitHub README]
+    B --> F[Live demo site]
+    F --> G[Pipeline readiness dashboard]
+    F --> H[2D sample outputs]
+    F --> I[Runbook commands]
+```
+
+The first screen of the demo shows the product itself: stage readiness, metrics, a synthetic character dataset sheet, and result artifacts. It is not just a marketing landing page.
+
+## System Architecture
+
+```mermaid
+flowchart TB
+    subgraph Inputs
+        V[2D animation footage]
+        C[Project and stage YAML configs]
+        M[Local model warehouse]
+    end
+
+    subgraph Core[Python pipeline core]
+        O[Pipeline orchestrator]
+        S[Stage manager]
+        R[Resource monitor]
+        IO[Metadata and artifact IO]
+    end
+
+    subgraph Vision[Computer vision stages]
+        F[Frame extraction]
+        Y[YOLO + ByteTrack tracking]
+        T[ToonOut-style segmentation]
+        P[DWpose conditioning]
+        H[Face embedding identity clustering]
+    end
+
+    subgraph Training[Dataset and training stages]
+        D[Captioned dataset builder]
+        K[kohya / diffusers LoRA training]
+        Q[Checkpoint evaluation and prompt tests]
+    end
+
+    subgraph Demo[Public demo layer]
+        Stub[CPU-safe synthetic artifacts]
+        Manifest[Static manifest JSON]
+        Site[portfolio-web static site]
+        Media[Screenshots and WebM video]
+    end
+
+    V --> F
+    C --> O
+    M --> Y
+    O --> S
+    O --> R
+    S --> IO
+    F --> Y --> T --> H --> D --> K --> Q
+    Y --> P --> D
+    IO --> Manifest
+    Stub --> Manifest
+    Manifest --> Site
+    Media --> Site
+```
+
+## Data Flow
+
+```mermaid
+flowchart LR
+    Frames[frames metadata + images] --> Tracks[detections / tracks metadata]
+    Tracks --> Masks[foreground masks + backgrounds]
+    Tracks --> Pose[pose keypoints + previews]
+    Masks --> Identity[identity clusters]
+    Identity --> Captions[VLM or stub captions]
+    Captions --> Dataset[LoRA dataset manifest]
+    Pose --> Dataset
+    Dataset --> Training[kohya / diffusers config]
+    Training --> Eval[checkpoint metrics + prompt tests]
+    Eval --> DemoManifest[portfolio manifest JSON]
+```
+
+## Pipeline Stage Matrix
+
+| Order | Stage | Output contract | Demo-safe? | Real workflow dependency |
+| --- | --- | --- | --- | --- |
+| 1 | Frame extraction | Frame images and scene metadata | Yes | Video decoder, scene detection |
+| 2 | YOLO + ByteTrack | Detection boxes, track IDs, per-frame metadata | Yes | YOLO weights for real data |
+| 3 | ToonOut segmentation | RGBA foreground cutouts and background references | Yes | ToonOut/ONNX/PyTorch model for real data |
+| 4 | DWpose extraction | Pose keypoints and visual previews | Yes | DWPose runtime for real data |
+| 5 | Identity clustering | Track-to-character groups and face crops | Yes | InsightFace/HDBSCAN for real data |
+| 6 | Dataset building | Captioned LoRA-ready rows | Yes | VLM/OpenAI captioning optional |
+| 7 | LoRA training | Training config, checkpoint metrics, sample prompts | Yes | CUDA, base model, kohya/diffusers stack |
+
+## Module Organization
+
+```mermaid
+flowchart TB
+    Repo[2d-animation-lora-pipeline]
+    Repo --> Lib[anime_pipeline package]
+    Repo --> Scripts[scripts CLI tools]
+    Repo --> Configs[configs]
+    Repo --> Demo[portfolio-web]
+    Repo --> Tests[tests]
+    Repo --> Docker[docker]
+
+    Lib --> Frames[frames]
+    Lib --> Detection[detection]
+    Lib --> Segmentation[segmentation]
+    Lib --> Clustering[clustering]
+    Lib --> Pose[pose]
+    Lib --> Datasets[datasets]
+    Lib --> Training[training]
+
+    Scripts --> CoreCLI[core/pipeline]
+    Scripts --> Generic[generic reusable stages]
+    Scripts --> Batch[batch automation]
+    Scripts --> Monitor[monitoring]
+```
+
+## Tech Stack Map
+
+```mermaid
+mindmap
+  root((2D Animation LoRA Pipeline))
+    Python
+      OmegaConf
+      pytest
+      pandas/parquet
+      OpenCV/Pillow
+    Computer Vision
+      YOLO/ByteTrack
+      ToonOut segmentation
+      DWpose
+      InsightFace
+      HDBSCAN
+    Generative AI
+      Stable Diffusion / SDXL
+      LoRA / PEFT
+      ControlNet
+      kohya-ss
+      Diffusers
+    Demo and Deployment
+      Static HTML/CSS/JS
+      GitHub Pages
+      Docker/Nginx
+      WebM screenshots
+```
+
+## Frontend, Backend, Data, API, Deployment
+
+| Layer | Implementation | Current status |
+| --- | --- | --- |
+| Frontend | Static HTML/CSS/JS in `portfolio-web/` | Works locally and on GitHub Pages |
+| Backend | Python CLI and file-based pipeline stages | No persistent service; demo-safe CLI works |
+| Database | None | Parquet/JSON files are the data contracts |
+| Public API | None | Browser fetches static `demo-data/manifest.json` |
+| Real ML runtime | Local GPU workstation workflow | Requires model/data warehouse and compatible CUDA stack |
+| Demo runtime | CPU-safe synthetic assets | Works without private data, GPU, external APIs, or model weights |
+| Deployment | GitHub Pages via `gh-pages`, plus Docker/Nginx | Static demo is deployable and verifiable with HTTP checks |
+
+## Demo Scenarios
+
+| Scenario | What to show | Time |
+| --- | --- | --- |
+| Fast portfolio review | Open portfolio page, play demo video, inspect gallery | 1-2 minutes |
+| Product demo | Open public demo site, scroll Results -> Pipeline -> Media | 3-5 minutes |
+| Engineering review | Run the manifest generator and demo tests locally | 5 minutes |
+| Architecture review | Walk through README diagrams and stage matrix | 5-10 minutes |
+| Deployment review | Show GitHub Pages workflow and Docker image build | 3 minutes |
+
+## Local Demo Commands
+
+Install demo-safe dependencies:
+
+```bash
+pip install -r requirements/core.txt -r requirements/dev.txt
+```
+
+Regenerate the public demo manifest and media:
+
+```bash
+python scripts/demo/run_demo_pipeline.py --skip-pipeline
+```
+
+Serve the static demo:
+
+```bash
+python -m http.server 8080 -d portfolio-web
+```
+
+Build and serve through Docker:
+
+```bash
+docker build -f docker/portfolio.Dockerfile -t 2d-animation-lora-pipeline-demo .
+docker run --rm -p 8080:80 2d-animation-lora-pipeline-demo
+```
+
+## Testing and Verification
+
+| Check | Command | Expected result |
+| --- | --- | --- |
+| Demo manifest and assets | `python -m pytest tests/demo -q` | Demo assets exist and manifest is valid |
+| Stub E2E tests | `python -m pytest tests/test_end_to_end_pipeline.py -q` | Captioning + CV stub workflow passes |
+| Resource/stage manager tests | `python -m pytest tests/core/pipeline/test_resource_monitor.py tests/core/pipeline/test_stage_manager.py -q` | CPU-safe core tests pass |
+| Focused smoke suite | `./tests/run_tests.sh` | Stable demo-safe suite passes |
+| Static HTTP check | `curl -I http://localhost:8080/demo-data/manifest.json` | `200 OK` |
+| Docker static build | `docker build -f docker/portfolio.Dockerfile -t 2d-animation-lora-pipeline-demo .` | Nginx image builds |
+| Pipeline config dry-run | `python scripts/run_pipeline.py --project portfolio_demo_2d --mode 2d --device cpu --dry-run` | Stage summary renders without stale stage errors |
+
+Full `python -m pytest tests/` can require GPU/model dependency alignment because several tests touch heavy diffusers, inpainting, training, or local model paths.
+
+## Real Model Workflow
+
+Real model runs are workstation jobs, not hosted website jobs.
+
+```bash
 pip install -r requirements/all.txt
-
-# (Optional) Install face recognition for identity clustering
-pip install insightface
+bash scripts/setup/install_pipeline_dependencies.sh
+python scripts/run_pipeline.py --project <project_id> --mode 2d --device cuda --dry-run
+python scripts/run_pipeline.py --project <project_id> --mode 2d --device cuda
 ```
 
-### Basic Usage
+Common requirements:
 
-```bash
-# Run full pipeline for a 2D animation project
-python scripts/run_pipeline.py \
-    --project simpsons \
-    --character homer \
-    --mode 2d
+| Requirement | Why it is needed |
+| --- | --- |
+| CUDA-capable GPU | Real segmentation, embeddings, diffusion inference, and LoRA training |
+| Local model warehouse | Avoids committing model weights |
+| Dataset warehouse | Stores raw media and generated artifacts outside git |
+| Optional API keys | Only for API-based captioning/refinement workflows |
+| Optional ComfyUI/kohya env | Visual workflow comparison and training launchers |
 
-# Run specific stages only
-python scripts/run_pipeline.py \
-    --project simpsons \
-    --stages multi_character_extraction,dataset_building,lora_training
+## Deployment Architecture
 
-# Resume from checkpoint
-python scripts/run_pipeline.py \
-    --project simpsons \
-    --start-from dataset_building
+```mermaid
+flowchart LR
+    Dev[Local repo] --> Commit[Commit demo assets]
+    Commit --> Main[origin/main]
+    Main --> Action[Deploy Demo Site workflow]
+    Action --> GH[gh-pages branch]
+    GH --> Pages[GitHub Pages]
+    Pages --> Public[Public demo URL]
 
-# Preview configuration without executing
-python scripts/run_pipeline.py \
-    --project familyguy \
-    --dry-run
+    Commit --> Docker[Docker/Nginx image]
+    Docker --> Local[Local static preview]
+    Portfolio[Main portfolio repo] --> PortfolioPages[justin21523.github.io project page]
+    Public --> PortfolioPages
 ```
 
-### Configuration Example
-
-Create a project config at `configs/projects/simpsons.yaml`:
-
-```yaml
-project: simpsons
-animation_mode: 2d  # Enable 2D-optimized parameters
-
-paths:
-  base_dir: /path/to/data/simpsons
-  input_video: /path/to/simpsons_s01e01.mp4
-  frames: ${paths.base_dir}/frames
-  segmented: ${paths.base_dir}/segmented
-  clustered: ${paths.base_dir}/clustered
-  training_data: ${paths.base_dir}/training_data
-
-# Frame extraction
-frame_extraction:
-  mode: scene
-  scene_threshold: 0.3
-  quality: high
-
-# Multi-character extraction (integrated stage)
-multi_character_extraction:
-  tracking:
-    model_path: /path/to/yolov11n.pt
-    min_track_length: 10
-    tracker_type: bytetrack
-
-  segmentation:
-    backend: stub  # Use "onnx" or "pytorch" with real ToonOut model
-
-  clustering:
-    min_cluster_size: 20  # 2D default (more than 3D's 10)
-    device: cuda
-```
-
----
-
-## 📚 Key Concepts
-
-### 2D vs 3D Animation Parameters
-
-This pipeline automatically adapts parameters based on animation style:
-
-| Parameter | 3D Default | 2D Default | Reason |
-|-----------|------------|------------|--------|
-| `alpha_threshold` | 0.15 | **0.25** | 2D has hard line-art edges |
-| `blur_threshold` | 80 | **100** | 2D maintains sharper focus |
-| `min_cluster_size` | 10 | **20** | 2D varies more (episodes, animators) |
-| `min_samples` | 2 | **3-5** | Need more samples for style variation |
-| `dataset_size` | 200-500 | **500-1000** | 2D needs more examples |
-| `color_jitter` | ❌ | ✅ | 2D has color variation across episodes |
-
-Use `--mode 2d` or `--mode 3d` to automatically apply appropriate parameters.
-
-### Multi-Character Handling
-
-The pipeline correctly handles multiple characters per frame:
-
-1. **YOLO Detection + Tracking**: Detects ALL characters, assigns track IDs across frames
-2. **Per-Track Segmentation**: Each character track is segmented independently
-3. **Identity Clustering**: Merges tracks of the SAME character using face recognition
-
-This ensures:
-- ✅ Different characters in same scene are separated
-- ✅ Same character across different scenes/cuts are merged
-- ✅ Character identity is maintained throughout the video
-
-### Stub Mode
-
-All modules support **stub mode** for rapid prototyping without model weights:
-
-```python
-from anime_pipeline.core import StubMode, StubConfig
-
-config = StubConfig(
-    use_stub=True,  # Explicit stub mode
-    backend="stub"
-)
-
-# Automatically falls back to stub if model loading fails
-result = StubMode.run_with_fallback(
-    model_loader=load_model,
-    real_inference=run_inference,
-    stub_inference=generate_stub,
-    config=config,
-    logger=logger
-)
-```
-
----
-
-## 🔧 Advanced Usage
-
-### Custom Stage Configuration
-
-```bash
-# Create custom stage config
-cat > configs/custom_pipeline.yaml <<EOF
-pipeline_stages:
-  - name: frame_extraction
-    enabled: true
-
-  - name: multi_character_extraction
-    enabled: true
-    config_key: multi_character_extraction
-
-  - name: dataset_building
-    enabled: true
-    dependencies: [multi_character_extraction]
-
-  - name: lora_training
-    enabled: true
-    dependencies: [dataset_building]
-EOF
-
-# Run with custom config
-python scripts/run_pipeline.py \
-    --project my_show \
-    --config configs/custom_pipeline.yaml
-```
-
-### Per-Character Configuration
-
-```yaml
-# configs/characters/homer_simpson.yaml
-character_name: homer_simpson
-display_name: "Homer Simpson"
-
-# Character-specific clustering parameters
-clustering:
-  min_cluster_size: 25  # Homer appears frequently
-  similarity_threshold: 0.75
-
-# Character-specific training parameters
-training:
-  target_dataset_size: 800
-  trigger_word: "homer simpson character"
-  learning_rate: 1e-4
-  epochs: 10
-```
-
-### Using New Utilities (Phase 4)
-
-```python
-# Unified metadata I/O
-from anime_pipeline.core import MetadataIO
-
-# Load detections with automatic fallback
-detections = MetadataIO.load_records(
-    path="detections.parquet",
-    logger=logger,
-    required_columns=["bbox_x1", "bbox_y1", "track_id"]
-)
-
-# Save with automatic format selection
-actual_path = MetadataIO.save_records(
-    records=detections,
-    path="output.parquet",
-    logger=logger,
-    prefer_parquet=True
-)
-```
-
----
-
-## 📊 Pipeline Status Monitoring
-
-### View Progress
-
-```python
-from anime_pipeline.core import PipelineOrchestrator
-
-orchestrator = PipelineOrchestrator(
-    project="simpsons",
-    mode="2d"
-)
-
-# Setup and run
-orchestrator.setup_standard_pipeline()
-orchestrator.run_full_pipeline()
-
-# Get progress
-progress = orchestrator.get_progress()
-print(f"Progress: {progress['progress_percent']:.1f}%")
-print(f"Completed: {progress['completed']}/{progress['total_stages']}")
-```
-
-### Checkpoint/Resume
-
-```python
-# Save checkpoint
-orchestrator.save_checkpoint()
-
-# Resume from checkpoint
-orchestrator.resume_from_checkpoint(
-    checkpoint_path="checkpoints/simpsons_checkpoint.json"
-)
-```
-
----
-
-## 🎨 2D-Specific Features
-
-### ToonOut Segmentation
-
-Optimized for hard-edge 2D line art:
-
-```yaml
-segmentation:
-  backend: onnx
-  model_path: /path/to/toonout.onnx
-  alpha_threshold: 0.25  # Higher than 3D (0.15)
-  edge_detection_mode: hard_edge  # vs 3D's soft_gradient
-```
-
-### Cartoon Face Detection
-
-Supports stylized 2D faces:
-
-```python
-from anime_pipeline.clustering import FaceDetector
-
-detector = FaceDetector(
-    device="cuda",
-    min_face_size=64  # Lowered for cartoon faces
-)
-
-# Automatically tries multiple backends:
-# 1. RetinaFace (works for some 2D styles)
-# 2. MTCNN (fallback)
-# 3. OpenCV Haar Cascades (last resort)
-```
-
-### DWpose for 2D
-
-Extract pose keypoints for ControlNet conditioning:
-
-```bash
-python scripts/run_pipeline.py \
-    --project simpsons \
-    --stages frame_extraction,multi_character_extraction,dwpose_extraction
-```
-
----
-
-## 🔬 Testing
-
-### Smoke Test
-
-```bash
-# Test pipeline without real model weights
-python scripts/run_pipeline.py \
-    --project test \
-    --dry-run
-
-# Run in stub mode (fast, no GPU needed)
-python scripts/run_pipeline.py \
-    --project test \
-    --stages frame_extraction,multi_character_extraction
-```
-
-### Integration Test
-
-```bash
-# Test with small sample
-python scripts/run_pipeline.py \
-    --project test_sample \
-    --mode 2d \
-    --stop-at dataset_building
-```
-
----
-
-## 📦 AI_WAREHOUSE 3.0 Storage
-
-This pipeline uses **AI_WAREHOUSE 3.0** centralized storage configuration:
-
-### Storage Layout
-
-| Location | Purpose | Speed |
-|----------|---------|-------|
-| `/mnt/c/ai_models/` | All model weights | Fast (SSD) |
-| `/mnt/c/ai_cache/` | HuggingFace, PyTorch cache | Fast (SSD) |
-| `/mnt/data/datasets/` | Source datasets | Large (HDD) |
-| `/mnt/data/training/` | Training outputs | Large (HDD) |
-
-### Quick Setup
-
-```bash
-# Set environment variables
-export HF_HOME=/mnt/c/ai_cache/huggingface
-export TORCH_HOME=/mnt/c/ai_cache/torch
-
-# Or use the built-in setup
-python -c "from anime_pipeline.config import setup_warehouse_environment; setup_warehouse_environment()"
-```
-
-### Validation Tools
-
-```bash
-# Validate configurations
-python scripts/utils/validate_warehouse_config.py
-
-# Scan for deprecated paths
-python scripts/utils/scan_deprecated_paths.py
-
-# Validate dataset structure
-python scripts/utils/validate_dataset_structure.py
-
-# Auto-generate project configs
-python scripts/utils/generate_project_configs.py
-```
-
-See **[AI_WAREHOUSE 3.0 Guide](docs/AI_WAREHOUSE_3.0.md)** for full documentation.
-
----
-
-## 📖 Documentation
-
-- **[AI_WAREHOUSE 3.0 Guide](docs/AI_WAREHOUSE_3.0.md)**: Storage configuration and migration
-- **[Migration Guide](docs/migration/v1_to_v2_migration.md)**: Upgrading from old pipeline
-- **[Configuration Guide](docs/guides/configuration_system.md)**: OmegaConf usage
-- **[Multi-Character Guide](docs/guides/multi_character_workflow.md)**: Handling multiple characters
-- **[2D vs 3D Parameters](docs/guides/2d_vs_3d_parameters.md)**: Parameter comparison and rationale
-- **[API Reference](docs/api/)**: Full API documentation
-
----
-
-## 🛠️ Development
-
-### Project Structure Principles
-
-1. **Modify existing files, don't create duplicates**: Always edit in place
-2. **Delete old versions after migration**: No "legacy" files
-3. **Use stub mode for rapid prototyping**: All modules support stub inference
-4. **Unified utilities**: Use `StubMode` and `MetadataIO` from `anime_pipeline.core`
-
-### Adding New Stages
-
-```python
-# In anime_pipeline/core/stages.py
-
-def execute_my_new_stage(
-    project: str,
-    config: Dict,
-    stage_config: Optional[Dict],
-    logger: logging.Logger
-) -> Dict[str, Any]:
-    """
-    Stage: My new processing stage.
-    """
-    logger.info("Running my new stage...")
-
-    # Your implementation here
-
-    return {
-        'success': True,
-        'items_processed': 100
-    }
-
-# Register in STAGE_REGISTRY
-STAGE_REGISTRY['my_new_stage'] = execute_my_new_stage
-```
-
----
-
-## 🤝 Contributing
-
-Contributions welcome! Please:
-
-1. Follow the existing code style (English code/comments, Chinese user messages)
-2. Use the unified utilities (`StubMode`, `MetadataIO`)
-3. Add tests for new features
-4. Update documentation
-
----
-
-## 📝 License
-
-MIT License - see [LICENSE](LICENSE) for details
-
----
-
-## 🙏 Acknowledgments
-
-- **3D Animation Pipeline**: Core infrastructure adapted from mature 3D Pixar-style pipeline
-- **ToonOut**: Foreground/background segmentation for 2D animation
-- **InsightFace**: Face recognition for identity clustering
-- **OmegaConf**: Hierarchical configuration system
-
----
-
-## 📞 Support
-
-- **Issues**: [GitHub Issues](https://github.com/yourusername/2d-animation-lora-pipeline/issues)
-- **Discussions**: [GitHub Discussions](https://github.com/yourusername/2d-animation-lora-pipeline/discussions)
-- **Documentation**: [Full Documentation](docs/)
-
----
-
-**Built with ❤️ for the 2D animation community**
+The ML pipeline does not run on GitHub Pages. Pages only hosts `portfolio-web/`, static screenshots, demo video, and the generated manifest.
+
+## Current Status
+
+| Area | Status | Evidence |
+| --- | --- | --- |
+| Demo-safe site | Working | `python -m http.server 8080 -d portfolio-web` |
+| Demo asset generation | Working | `python scripts/demo/run_demo_pipeline.py --skip-pipeline` |
+| Demo tests | Working | `python -m pytest tests/demo -q` |
+| Stub E2E smoke | Working | `python -m pytest tests/test_end_to_end_pipeline.py -q` |
+| Static deployment | Ready | `.github/workflows/deploy-demo-pages.yml` and Dockerfile |
+| Portfolio integration | Supported | Main portfolio slug is `2d-animation-lora-pipeline` |
+| Real GPU training | Environment-dependent | Requires local model/data warehouse and CUDA stack |
+| Hosted backend/API | Not applicable | Public demo is intentionally static |
+
+## Known Risks and Limits
+
+| Risk | Impact | Mitigation |
+| --- | --- | --- |
+| Real model workflows depend on local GPU and model paths | Cannot be fully reproduced on CPU-only machines | Public demo uses deterministic mock-safe artifacts |
+| Large generated media/checkpoints are intentionally untracked | Reviewers cannot inspect private raw training data | README and demo show anonymized stage outputs |
+| Some scripts are research/batch oriented | Full repo contains more tools than the interview path needs | Demo-safe commands and docs define the stable path |
+| Optional API captioning needs secrets | Public CI cannot call external captioning APIs | API paths are not required for demo-safe tests |
+| GitHub Pages is static only | Cannot run real ML inference in browser | Real pipeline remains CLI/workstation; static demo shows results |
+
+## Interview Highlights
+
+Reviewers should focus on:
+
+- File-based ML data contracts through parquet/JSON manifests.
+- Config-driven orchestration rather than hard-coded one-off scripts.
+- 2D-specific handling: hard-edge masks, multi-character frames, style drift, and identity merging.
+- Clear separation between real GPU workflows and CPU-safe public demo mode.
+- Public demo assets that are safe to screenshot, record, and publish.
+- Main portfolio integration with cover, gallery, video, demo link, GitHub, and README.
+
+## Privacy and Data Notes
+
+Raw media, model weights, generated datasets, checkpoints, logs, and secrets are intentionally excluded from git. Public assets in `portfolio-web/` are synthetic/anonymized demonstration files intended for portfolio review.

@@ -1,8 +1,8 @@
 # 2D Animation LoRA Pipeline
 
-> **High-quality LoRA training pipeline for Western 2D animation characters**
+> **High-quality LoRA training pipeline for 2D animation characters**
 >
-> Optimized for TV shows like The Simpsons, Family Guy, Rick and Morty, etc.
+> Designed for generic 2D animated footage and public-safe anonymized demos.
 
 ![Python](https://img.shields.io/badge/python-3.10+-blue.svg)
 ![License](https://img.shields.io/badge/license-MIT-green.svg)
@@ -12,7 +12,7 @@
 
 ## 🎯 Overview
 
-A comprehensive, production-ready pipeline for training character LoRA adapters from 2D animated content. Built on proven infrastructure from 3D animation pipelines, adapted for the unique characteristics of Western 2D animation.
+A comprehensive, production-ready pipeline for training character LoRA adapters from 2D animated content. Built on proven infrastructure from animation data pipelines and adapted for the unique characteristics of 2D line-art footage.
 
 **Key Features:**
 - 🎬 **End-to-end automation**: Video → frames → segmentation → clustering → training
@@ -541,7 +541,7 @@ MIT License - see [LICENSE](LICENSE) for details
 
 ## 🙏 Acknowledgments
 
-- **3D Animation Pipeline**: Core infrastructure adapted from mature 3D Pixar-style pipeline
+- **3D Animation Pipeline**: Core infrastructure adapted from a mature 3D animation pipeline
 - **ToonOut**: Foreground/background segmentation for 2D animation
 - **InsightFace**: Face recognition for identity clustering
 - **OmegaConf**: Hierarchical configuration system

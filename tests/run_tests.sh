@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 #
-# Test Runner for 3D Animation LoRA Pipeline
+# Test Runner for 2D Animation LoRA Pipeline
 #
-# Runs all unit tests and integration tests
+# Runs the CPU-safe demo/smoke test suite
 #
 # Author: LLMProvider Tooling
 # Date: 2025-01-17
@@ -16,7 +16,7 @@ YELLOW='\033[1;33m'
 NC='\033[0m' # No Color
 
 echo "========================================"
-echo "3D Animation LoRA Pipeline Test Suite"
+echo "2D Animation LoRA Pipeline Smoke Test Suite"
 echo "========================================"
 echo ""
 
@@ -48,9 +48,21 @@ run_test() {
     echo ""
 }
 
-# Run unit tests
-echo "=== Unit Tests ==="
+# Run CPU-safe smoke tests
+echo "=== CPU-safe smoke tests ==="
 echo ""
+
+if [ -f "tests/demo/test_demo_manifest.py" ]; then
+    run_test "tests/demo/test_demo_manifest.py"
+fi
+
+if [ -f "tests/test_config.py" ]; then
+    run_test "tests/test_config.py"
+fi
+
+if [ -f "tests/test_end_to_end_pipeline.py" ]; then
+    run_test "tests/test_end_to_end_pipeline.py"
+fi
 
 if [ -f "tests/core/pipeline/test_resource_monitor.py" ]; then
     run_test "tests/core/pipeline/test_resource_monitor.py"
@@ -58,18 +70,6 @@ fi
 
 if [ -f "tests/core/pipeline/test_stage_manager.py" ]; then
     run_test "tests/core/pipeline/test_stage_manager.py"
-fi
-
-if [ -f "tests/core/pipeline/test_orchestrator.py" ]; then
-    run_test "tests/core/pipeline/test_orchestrator.py"
-fi
-
-# Run integration tests
-echo "=== Integration Tests ==="
-echo ""
-
-if [ -f "tests/integration/test_pipeline_integration.py" ]; then
-    run_test "tests/integration/test_pipeline_integration.py"
 fi
 
 # Summary

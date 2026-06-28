@@ -5,7 +5,7 @@
 This directory contains all project documentation organized by category.
 
 ### 🚀 Quick Start Guides (`quickstart/`)
-- **QUICK_START_LUCA.md** - Step-by-step guide for Luca character processing
+- **QUICK_START_PROJECT.md** - Step-by-step guide for anonymized character processing
 - **QUICK_START_INTELLIGENT_PROCESSING.md** - Intelligent pipeline processing guide
 
 ### 📖 User Guides (`guides/`)
@@ -59,7 +59,7 @@ This directory contains all project documentation organized by category.
 ## 🔍 Quick Links
 
 ### For New Users
-1. Start with `quickstart/QUICK_START_LUCA.md`
+1. Start with the anonymized quick-start guide for project processing
 2. Review `guides/QUICK_REFERENCE_LORA.md`
 3. Check `setup/SETUP_STATUS.md`
 

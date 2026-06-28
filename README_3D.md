@@ -1,6 +1,6 @@
 # 3D Animation LoRA Pipeline
 
-A comprehensive toolkit for training high-quality LoRA models for **3D animated characters**, specifically optimized for **Pixar-style animation** and other 3D CGI content.
+A comprehensive toolkit for training high-quality LoRA models for **3D animated characters**, specifically optimized for stylized 3D CGI content.
 
 ## Features
 
@@ -176,11 +176,11 @@ Use 3D-specific prompts:
 
 ## Supported 3D Animation Styles
 
-- Pixar (Toy Story, Incredibles, etc.)
-- DreamWorks (Shrek, How to Train Your Dragon)
-- Blue Sky Studios (Ice Age, Rio)
-- Illumination (Minions, Sing)
-- Disney 3D (Frozen, Moana)
+- Stylized feature-animation characters
+- Stylized television-animation characters
+- Stylized studio-style CGI characters
+- 3D CGI character datasets
+- Public-safe anonymized demo assets
 - Custom 3D animations
 
 ## License
